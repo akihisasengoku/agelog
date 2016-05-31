@@ -20,6 +20,10 @@ default: &default
   # For details on connection pooling, see rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
+  
+  username: <%= ENV['AGELOG_DATABASE_USERNAME'] %>
+  password: <%= ENV['AGELOG_DATABASE_PASSWORD'] %>
+  host: localhost
 
 development:
   <<: *default
@@ -81,5 +85,5 @@ test:
 production:
   <<: *default
   database: agelog_production
-  username: agelog
+  username: <%= ENV['AGELOG_DATABASE_USERNAME'] %>
   password: <%= ENV['AGELOG_DATABASE_PASSWORD'] %>
