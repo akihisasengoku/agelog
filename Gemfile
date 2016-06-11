@@ -31,6 +31,12 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# for upload images
+gem 'carrierwave'
+gem 'rmagick'
+
+# breadcrumb
+gem 'gretel'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

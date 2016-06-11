@@ -1,17 +1,30 @@
 <p id="notice"><%= notice %></p>
-<div class='breadcrumbs'>後でgem追加</div>
+<div class='breadcrumb'>後でgem追加</div>
 <div class="profileContainer">
 <div class="profileCover"></div>
 <div class="profileHeader">
-    <p>
-    <%= gravatar_for(@user) %>
-    <%= @user.name %>
-    </p>
+    <p><%= gravatar_for(@user) %></p>
+    <p><%= @user.name %></p>
+    <p><%= @user.title %></p>
+    <p><%= @user.description %></p>
 </div>
-<div class="profile-navbar"></div>
+<div class="plot">ここにプロット地図</div>
+<div class="profile-navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><%= link_to "ホーム", root_path %></li>
+                <li><%= link_to "フォロー", '#' %></li>
+                <li><%= link_to "フォロワー", '#' %></li>
+                <li><%= link_to "行きたい店リスト", '#' %></li>
+            </ul>
+        </div>
+    </nav>
 </div>
-
-
+</div><!--profileContainer-->
+<div class="wrapContents">
+    <div>投稿</div>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
