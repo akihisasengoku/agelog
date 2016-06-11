@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
     validates :title, presence: false, length: { maximum: 14 }
     validates :description, presence: false, length: { maximum: 140 }
     has_secure_password
+    mount_uploader :coverimage, ImageUploader
+    validates :coverimage, presence: false
 end

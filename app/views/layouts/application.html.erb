@@ -9,6 +9,7 @@
 <body>
 <%= render 'layouts/header' %>
 <div class="wrapContainer">
+  <p><%= breadcrumbs separator: " &rsaquo; " %></p>
   <%= yield %>
 </div>
 <%= render 'layouts/footer' %>
