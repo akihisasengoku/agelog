@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
     has_secure_password
     mount_uploader :coverimage, ImageUploader
     validates :coverimage, presence: false
+    has_many :microposts
 end
