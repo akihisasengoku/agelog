@@ -8,8 +8,8 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <li><%= link_to "ホーム", root_path %></li>
-                <li><%= link_to "フォロー", '#' %></li>
-                <li><%= link_to "フォロワー", '#' %></li>
+                <li><%= link_to "フォロー", followings_user_path %></li>
+                <li><%= link_to "フォロワー", followers_user_path %></li>
                 <li><%= link_to "行きたい店リスト", '#' %></li>
             </ul>
         </div>
@@ -18,10 +18,13 @@
 </div><!--profileContainer-->
 <div class="wrapMicroposts">
     <% if logged_in? %>
+        <div id="followCondition">
+            <%= render 'follow_form' %>
+        </div>
         <div class="up">
             <section class="micropost_form">
-            <%= render 'shared/micropost_form' %>
-          </section>
+                <%= render 'shared/micropost_form' %>
+            </section>
         </div>
     <% end %>
     <% if @user.microposts.any? %>
