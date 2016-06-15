@@ -2,7 +2,8 @@
 <% breadcrumb :show_user, @user %>
 <div class="profileContainer">
 <%= render 'shared/user_info' %>
-<div class="plot">ここにプロット地図</div>
+<div id="map"></div>
+<style>#map{height:500px;width:600px;}</style>
 <div class="profile-navbar">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -37,3 +38,18 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
+
+<script>
+(window.onload = function() {
+    lat = 35.1565645;
+    lon = 136.9247428;
+    L.Icon.Default.imagePath	=	"/assets";
+    var	map	= L.map('map').setView([lat, lon],	15);
+    var	osmUrl	= "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
+    var	osmAttrib	=	"Map	data	©	OpenStreetMap contributors";
+    L.tileLayer(osmUrl,	{ attribution:	osmAttrib, maxZoom:	20, }).addTo(map);
+    
+    var	marker	= L.marker([lat, lon]).addTo(map);
+    //map.on("click",	function(e)	{ marker.setLatLng(e.latlng); $("#map_latitude").val(e.latlng.lat); 
+})();
+</script>
