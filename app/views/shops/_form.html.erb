@@ -15,7 +15,7 @@
   <style>#mapForm{height:400px; width: 600px;}</style>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, class: 'kome' %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
@@ -23,12 +23,10 @@
     <%= f.text_field :address %>
   </div>
   <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude, id: "latForm" %>
+    <%= f.hidden_field :latitude, id: "latForm" %>
   </div>
   <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude, id: "lngForm" %>
+    <%= f.hidden_field :longitude, id: "lngForm" %>
   </div>
   <div class="actions">
     <%= f.submit %>
