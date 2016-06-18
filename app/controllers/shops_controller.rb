@@ -76,37 +76,6 @@ class ShopsController < ApplicationController
       params.require(:shop).permit(:name, :address, :latitude, :longitude)
     end
     
-    def geocode_yolp(address)
-      puts "Geocode by Yahoo!ジオコーダAPI"
-    
-      address = URI.encode(address)
-      hash = Hash.new
-    
-      # 出力形式にJSONを指定する
-      reqUrl = "#{ENV['BASE_URL_YOLP_GEOCODER']}?appid=#{ENV['YAHOO_APP_ID']}&query=#{address}&output=json"
-      response = Net::HTTP.get_response(URI.parse(reqUrl))
-    
-      # レスポンスコードのチェック
-      # 詳細は http://magazine.rubyist.net/?0013-BundledLibraries
-      case response
-      # 200 OK
-      when Net::HTTPSuccess then
-        data = JSON.parse(response.body)
-        #p status # for DEBUG
-        # YOLPでの座標情報は緯度経度に分かれていない（カンマ区切りの）ため分解する
-        coordinates = data['Feature'][0]['Geometry']['Coordinates'].split(/,\s?/)
-        hash['lat'] = coordinates[1].to_f # 緯度
-        hash['lng'] = coordinates[0].to_f # 経度
-      # それ以外
-      else
-        hash['lat'] = 0.00
-        hash['lng'] = 0.00
-      end
-    
-      return hash
-    
-    end
-    
     # Yahoo!リバースジオコーダAPI
     def reverse_geocode_yolp(coordinates)
     

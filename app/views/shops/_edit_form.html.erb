@@ -11,12 +11,21 @@
     </div>
   <% end %>
   
-  <div id="mapForm"></div>
-  <style>#mapForm{height:400px; width: 600px;}</style>
+  <%= content_tag :div, id: "mapEditForm", 
+            data: { 
+              map: :marketplot,
+              latlng: (@shop[:latitude].to_s + "_" + @shop[:longitude].to_s)
+            } do -%>
+  <% end -%>
+  <style>#mapEditForm{height:400px; width: 600px;}</style>
 
   <div class="field">
     <%= f.label :name, class: 'kome' %><br>
     <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, id: "addressForm" %>
   </div>
   <div class="field">
     <%= f.hidden_field :latitude, id: "latForm" %>
