@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
     mount_uploader :coverimage, ImageUploader
     validates :coverimage, presence: false
     has_many :microposts
+    has_many :shops, through: :microposts
     has_many :following_relationships, class_name: "Relationship",
                                        foreign_key: "follower_id",
                                        dependent: :destroy

@@ -9,6 +9,17 @@
   <strong>Address:</strong>
   <%= @shop.address %>
 </p>
+<% if logged_in? %>
+  <%= render 'shared/micropost_form' %>
+<% end %>
+
+<% if @microposts.any? %>
+  <div class="microposts">
+    <% @microposts.each do |m| %>
+      <%= m.content %>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_shop_path(@shop) %> |
 <%= link_to 'Back', shops_path %>

@@ -3,5 +3,8 @@
   <div class="field">
     <%= f.text_area :content, placeholder: "Compose new micropost..." %>
   </div>
+  <div class="field">
+    <%= f.hidden_field :shop_id, value: @shop.id %>
+  </div>
   <%= f.submit "Post", class: "btn btn-primary" %>
 <% end %>
