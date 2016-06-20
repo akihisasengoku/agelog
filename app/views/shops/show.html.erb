@@ -16,8 +16,20 @@
 <% if @microposts.any? %>
   <div class="microposts">
     <% @microposts.each do |m| %>
-      <%= m.content %>
+      <div class="micropost">
+        <h2><%= link_to m.user.name, user_path(m.user.id) %></h2>
+        <p><%= m.content %></p>
+      </div>
     <% end %>
+  </div>
+  
+  <div class="users">
+    <h2>All Users</h2>
+    <ul>
+      <% @users.each do |u| %>
+        <li><%= link_to u.name, user_path(u.id) %></li>
+      <% end %>
+    </ul>
   </div>
 <% end %>
 

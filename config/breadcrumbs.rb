@@ -3,8 +3,8 @@ crumb :root do
 end
 
 # user#show
-crumb :show_user do |user|
-  link user.name+"_"+user.title, user
+crumb :show_user do |show_user|
+  link show_user.name+"_"+show_user.title.to_s, user_path(show_user)
   parent :root
 end
 

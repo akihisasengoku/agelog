@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @micropost = current_user.microposts.build if logged_in?
-    @microposts = @user.microposts.order(creted_at: :desc)
+    @microposts = @user.microposts.order(created_at: :desc)
+    @shops = @user.shops.uniq
   end
 
   # GET /users/new

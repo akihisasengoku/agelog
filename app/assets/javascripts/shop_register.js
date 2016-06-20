@@ -23,14 +23,18 @@ $(function(){
         map.on('click', function(e){
             marker = onMapClick(e);
         });
+    } else if ($('#userMap').length) { //div#userMapがある時、つまりusers/showの時
+        var	map	= L.map('userMap').setView([lat, lng],	15);
+        mapCreate(map);
+        reviewedShopsMarkerPlot(map);
     }
     
     // create map
-    function mapCreate(mapObject) {
+    function mapCreate(mapObj) {
         L.Icon.Default.imagePath	=	"/assets";
         var	osmUrl	= "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
         var	osmAttrib	=	"Map	data	©	OpenStreetMap contributors";
-        L.tileLayer(osmUrl,	{ attribution:	osmAttrib, maxZoom:	20, }).addTo(mapObject);
+        L.tileLayer(osmUrl,	{ attribution:	osmAttrib, maxZoom:	20, }).addTo(mapObj);
     }
     
     // plot current marker on edit page
@@ -47,6 +51,15 @@ $(function(){
         });
         initialMarker.addTo(map);
         return initialMarker;
+    }
+    
+    // plot all shops already reviewed
+    function reviewedShopsMarkerPlot(mapObj) {
+        $('#wrapLatlngInfo').find('.latlngInfo').each(function() {
+            var that = $(this);
+            var	tmpMarker	= new L.marker([that.find('.latInfo').text(), that.find('.lngInfo').text()], {draggable:'true'});
+            tmpMarker.addTo(mapObj);
+        });
     }
     
     // delete the last marker and create a new marker on click point which have draggable action to update latlng

@@ -1,7 +1,7 @@
 <div class="profileCover"><%= image_tag @user.coverimage_url(:thumb) %></div>
 <div class="profileHeader">
-    <%= link_to gravatar_for(current_user, size: 50), current_user %>
-    <h2><%= link_to current_user.name, current_user %></h2>
-    <p><%= current_user.title %></p>
-    <p><%= current_user.description %></p>
+    <%= link_to gravatar_for(@user, size: 50), user_path(@user) %>
+    <h2><%= link_to @user.name, user_path(@user) %></h2>
+    <p><%= @user.title %></p>
+    <p><%= @user.description %></p>
 </div>
