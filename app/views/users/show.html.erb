@@ -37,8 +37,7 @@
       <div class="microposts">
         <% @microposts.each do |m| %>
           <div class="micropost">
-            <h2><%= link_to m.shop.name, shop_path(m.shop.id) %></h2>
-            <p><%= m.content %></p>
+            <!-- editing -->
           </div>
         <% end %>
       </div>

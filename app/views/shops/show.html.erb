@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div id="shopMap"></div>
+<style>#shopMap{width:500px;height:400px;}</style>
 <p>
   <strong>Name:</strong>
   <%= @shop.name %>
@@ -9,6 +11,19 @@
   <strong>Address:</strong>
   <%= @shop.address %>
 </p>
+
+<div id="wrapLatLngInfo" hidden>
+  <div class="latlngInfo">
+      <div class="latInfo" hidden><%= @shop.latitude.to_s %></div>
+      <div class="lngInfo" hidden><%= @shop.longitude.to_s %></div>
+  </div>
+</div>
+
+<% if @shop.shop_categories.any? %>
+  <% @shop.categories.each do |category| %>
+    <div><%= category.name %></div>
+  <% end %>
+<% end %>
 <% if logged_in? %>
   <%= render 'shared/micropost_form' %>
 <% end %>

@@ -4,7 +4,7 @@ class ShopsController < ApplicationController
   # GET /shops
   # GET /shops.json
   def index
-    @shops = Shop.all
+    @shops = Form::Shop.all
   end
 
   # GET /shops/1
@@ -17,7 +17,7 @@ class ShopsController < ApplicationController
 
   # GET /shops/new
   def new
-    @shop = Shop.new
+    @shop = Form::Shop.new
   end
 
   # GET /shops/1/edit
@@ -27,7 +27,7 @@ class ShopsController < ApplicationController
   # POST /shops
   # POST /shops.json
   def create
-    @shop = Shop.new(shop_params)
+    @shop = Form::Shop.new(shop_params)
     @coodinates = {}
     @coodinates["lat"] = @shop[:latitude]
     @coodinates["lng"] = @shop[:longitude]
@@ -35,7 +35,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html { redirect_to @shop, notice: 'Shop was successfully created.' }
+        format.html { redirect_to shop_path(@shop), notice: 'Shop was successfully created.' }
         format.json { render :show, status: :created, location: @shop }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class ShopsController < ApplicationController
   def update
     respond_to do |format|
       if @shop.update(shop_params)
-        format.html { redirect_to @shop, notice: 'Shop was successfully updated.' }
+        format.html { redirect_to shop_path(params[:id]), notice: 'Shop was successfully updated.' }
         format.json { render :show, status: :ok, location: @shop }
       else
         format.html { render :edit }
@@ -71,12 +71,15 @@ class ShopsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_shop
-      @shop = Shop.find(params[:id])
+      @shop = Form::Shop.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def shop_params
-      params.require(:shop).permit(:name, :address, :latitude, :longitude)
+      params.require(:form_shop)
+            .permit(Form::Shop::REGISTRABLE_ATTRIBUTES +
+            [shop_categories_attributes: Form::ShopCategory::REGISTRABLE_ATTRIBUTES]
+            )
     end
     
     # Yahoo!リバースジオコーダAPI

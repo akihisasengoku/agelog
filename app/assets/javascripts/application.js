@@ -15,4 +15,5 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require leaflet
+//= require cocoon
 //= require_tree .

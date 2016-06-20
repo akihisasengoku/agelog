@@ -27,6 +27,10 @@ $(function(){
         var	map	= L.map('userMap').setView([lat, lng],	15);
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
+    } else if ($('#shopMap').length) {
+        var	map	= L.map('shopMap').setView([lat, lng],	15);
+        mapCreate(map);
+        reviewedShopsMarkerPlot(map);
     }
     
     // create map

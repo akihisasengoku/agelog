@@ -20,9 +20,9 @@
         <td><%= shop.address %></td>
         <td><%= shop.latitude %></td>
         <td><%= shop.longitude %></td>
-        <td><%= link_to 'Show', shop %></td>
+        <td><%= link_to 'Show', shop_path(shop) %></td>
         <td><%= link_to 'Edit', edit_shop_path(shop) %></td>
-        <td><%= link_to 'Destroy', shop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', shop_path(shop), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

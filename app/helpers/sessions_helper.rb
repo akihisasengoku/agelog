@@ -10,4 +10,9 @@ module SessionsHelper
     def stored_location
         session[:forwarding_url] = request.url if request.get?
     end
+    
+    def log_out
+        session.delete(:user_id)
+        @current_user = nil
+      end
 end
