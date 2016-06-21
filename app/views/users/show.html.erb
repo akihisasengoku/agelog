@@ -33,11 +33,12 @@
             <% end %>
         </div>
     <% end %>
-    <% if @microposts.any? %>
+    <% if !@microposts.empty? %>
       <div class="microposts">
         <% @microposts.each do |m| %>
           <div class="micropost">
-            <!-- editing -->
+            <%= link_to m.shop.name, shop_path(m.shop.id) %>
+            <%= m.content %>
           </div>
         <% end %>
       </div>

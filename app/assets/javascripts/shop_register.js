@@ -61,7 +61,7 @@ $(function(){
     function reviewedShopsMarkerPlot(mapObj) {
         $('#wrapLatlngInfo').find('.latlngInfo').each(function() {
             var that = $(this);
-            var	tmpMarker	= new L.marker([that.find('.latInfo').text(), that.find('.lngInfo').text()], {draggable:'true'});
+            var	tmpMarker	= new L.marker([that.find('.latInfo').text(), that.find('.lngInfo').text()]);
             tmpMarker.addTo(mapObj);
         });
     }
