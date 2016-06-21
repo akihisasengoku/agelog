@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   include SessionsHelper
-  
+  before_filter :set_search
+
   private
   def logged_in_user
     unless logged_in?
@@ -29,5 +30,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def set_search
+    #@search = Article.search(params[:q])
+    @search = Form::Shop.ransack(params[:q]) #ransackメソッド推奨
+    @search_shops = @search.result.includes(:categories)
+  end
   
 end
