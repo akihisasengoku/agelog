@@ -21,9 +21,12 @@
 </div>
 
 <% if @shop.shop_categories.any? %>
+  <h2>Categories</h2>
+  <ul>
   <% @shop.categories.each do |category| %>
-    <div><%= category.name %></div>
+    <li><%= category.name %></li>
   <% end %>
+  </ul>
 <% end %>
 <% if logged_in? %>
   <%= render 'shared/micropost_form' %>
@@ -49,5 +52,5 @@
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<%= link_to 'Edit', edit_shop_path(@shop) %>
 <%= link_to 'Back', shops_path %>

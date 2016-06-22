@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620002002) do
+ActiveRecord::Schema.define(version: 20160622030656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +57,15 @@ ActiveRecord::Schema.define(version: 20160620002002) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
+
+  create_table "shop_areas", force: :cascade do |t|
+    t.integer  "shop_id"
+    t.integer  "area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shop_areas", ["shop_id", "area_id", "created_at"], name: "index_shop_areas_on_shop_id_and_area_id_and_created_at", unique: true, using: :btree
 
   create_table "shop_categories", force: :cascade do |t|
     t.integer  "shop_id"

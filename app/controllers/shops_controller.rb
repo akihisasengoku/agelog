@@ -78,6 +78,7 @@ class ShopsController < ApplicationController
     def shop_params
       params.require(:form_shop)
             .permit(Form::Shop::REGISTRABLE_ATTRIBUTES +
+            [shop_areas_attributes: Form::ShopArea::REGISTRABLE_ATTRIBUTES] +
             [shop_categories_attributes: Form::ShopCategory::REGISTRABLE_ATTRIBUTES]
             )
     end

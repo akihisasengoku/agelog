@@ -25,7 +25,32 @@
     <%= f.hidden_field :longitude, id: "lngForm" %>
   </div>
   <div class="text-right">
-      <%= link_to_add_association 'カテゴリを追加', f, :shop_categories,
+      <%= link_to_add_association 'エリアを追加', f, :shop_areas,
+        class: 'btn btn-default',
+        data: {
+          association_insertion_node: '#detail-association-insertion-point',
+          association_insertion_method: 'append' }
+       %>
+    </div>
+    <table class="table table-list">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody id='detail-association-insertion-point'>
+    <div class="form-group">
+    <%= f.fields_for :shop_areas do |od| %>
+      <%= render 'shop_area_fields', f: od %>
+    <% end %>
+    </div>
+    </tbody>
+    </table>
+  </div>
+  <div class="text-right">
+      <%= link_to_add_association 'ジャンルを追加', f, :shop_categories,
         class: 'btn btn-default',
         data: {
           association_insertion_node: '#detail-association-insertion-point',
