@@ -6,6 +6,7 @@
       </div>
       <dl>
         <%= search_form_for @search, url: shops_path do |f| %>
+          <dt><%= f.select :areas_id_eq, options_from_collection_for_select(Area.all, :id, :name, @search.areas_id_eq) %></dt>
           <dt><%= f.select :categories_id_eq, options_from_collection_for_select(Category.all, :id, :name, @search.categories_id_eq) %></dt>
           <dt><%= f.text_field :name_cont ,placeholder: '検索するテキストを入力...' %></dt>
           <dd><%= f.submit ("検索") , class: 'search-btn'%></dd>

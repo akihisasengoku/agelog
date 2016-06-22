@@ -20,6 +20,12 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :sex_1, '男' %><br>
+    <%= f.radio_button :sex, '男' %><br />
+    <%= f.label :sex_2, '女' %><br>
+    <%= f.radio_button :sex, '女' %><br />
+  </div>
+  <div class="field">
     <%= f.label :password %><br>
     <%= f.password_field :password %>
   </div>
