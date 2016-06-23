@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
     end
     
     def want(shop)
-        wants.create(shop_id: shop.id)
+        wants.find_or_create_by(shop_id: shop.id)
     end
     
     def unwant(shop)
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
     end
     
     def age(shop)
-        ages.create(shop_id: shop.id)
+        ages.find_or_create_by(shop_id: shop.id)
     end
     
     def unage(shop)

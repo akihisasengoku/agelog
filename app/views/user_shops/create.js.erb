@@ -1,11 +1,22 @@
+var time = 1000;
 <% if params[:type] == "Age" %>
-  $(".age-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/unage' , shop: @shop)) %>");
-  var ageCount = $('#ageCount');
-  ageCount.html(parseInt(ageCount.text())+1);
+  var age = function age() {
+    $('#speedTest').find(".age-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/unage' , shop: @shop)) %>");
+    var ageCount = $('#ageCount');
+    ageCount.html(parseInt(ageCount.text())+1);
+  }
+  setTimeout(age, time);
+  
 <% else %>
-  $(".want-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/unwant' , shop: @shop)) %>");
-  var wantCount = $('#wantCount');
-  wantCount.html(parseInt(wantCount.text())+1);
+  var want = function want() {
+    $('#speedTest').find(".want-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/unwant' , shop: @shop)) %>");
+    var wantCount = $('#wantCount');
+    wantCount.html(parseInt(wantCount.text())+1);
+  }
+  setTimeout(want, time);
 <% end %>
 
-$('.btn-age,.btn-want').removeAttr('disabled');
+function clearDisabled() {
+  $('.btn-age').removeAttr('disabled').text();
+  $('.btn-want').removeAttr('disabled').text();
+}

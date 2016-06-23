@@ -1,0 +1,11 @@
+<div class="index">
+    <% if @user.want_shops.any? %>
+        <ul>
+        <% @user.want_shops.each do |shop| %>
+            <li><%= link_to shop.name, shop_path(shop) %></li>
+        <% end %>
+        </ul>
+    <% end %>
+    <%= render 'shared/recommend' %>
+    
+</div>
