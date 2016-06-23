@@ -1,0 +1,2 @@
+class Age < UserShop
+end

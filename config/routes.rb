@@ -1,16 +1,22 @@
 Rails.application.routes.draw do
+  
+
   root 'static_pages#home'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  get 'following', to: 'static_pages#show'
-  get 'follower', to: 'static_pages#show'
+  # get 'following', to: 'static_pages#show'
+  # get 'follower', to: 'static_pages#show'
+  # get 'wanted_shops', to: 'static_pages#show'
+  # get 'aged_shops', to: 'static_pages#show'
   delete 'logout', to: 'sessions#destroy'
   
   resources :users do
     member do
       get :followings
       get :followers
+      get :wanted_shops
+      get :aged_shops
     end
   end
   resources :sessions, only: [:new, :create, :destroy]
@@ -20,6 +26,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :shops
   resources :areas
+  resources :user_shops, only: [:create, :destroy]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

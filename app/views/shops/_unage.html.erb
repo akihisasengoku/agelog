@@ -1,0 +1,6 @@
+<%= link_to "Aged↑" , 
+    user_shop_path(current_user.ages.find_by(:shop_id => shop.id),
+        shop_id: shop.id, type: "Age"),
+    :class => "age-#{shop.id} btn-age btn btn-warning btn-sm",
+    :remote => true,
+    :method => :delete %>

@@ -12,3 +12,4 @@ $ ->
         -> 
                 $('#followBtn').removeClass('js_follow js_unfollow')
     )
+   

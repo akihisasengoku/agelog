@@ -1,0 +1,15 @@
+<div class="action">
+  <% if current_user.wanted? shop %>
+    <%= render 'shops/unwant' , shop: shop %>
+  <% else %>
+    <%= render 'shops/want' , shop: shop %>
+  <% end %> 
+  <p id="wantCount"><%= shop.want_users.count %></p>
+
+  <% if current_user.aged? shop %>
+    <%= render 'shops/unage' , shop: shop %>
+  <% else %>
+    <%= render 'shops/age' , shop: shop %>
+  <% end %>
+  <p id="ageCount"><%= shop.age_users.count %></p>
+</div>

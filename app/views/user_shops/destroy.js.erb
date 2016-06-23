@@ -1,0 +1,11 @@
+<% if params[:type] == "Age" %>
+  $(".age-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/age' , shop: @shop)) %>");
+  var ageCount = $('#ageCount');
+  ageCount.html(parseInt(ageCount.text())-1);
+<% else %>
+  $(".want-<%= @shop.id %>").replaceWith("<%= escape_javascript(render('shops/want' , shop: @shop)) %>");
+  var wantCount = $('#wantCount');
+  wantCount.html(parseInt(wantCount.text())-1);
+<% end %>
+
+$('.btn-age,.btn-want').removeAttr('disabled');
