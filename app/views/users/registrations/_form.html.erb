@@ -1,0 +1,40 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+    
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :coverimage %>
+      <%= f.file_field :coverimage %>
+    </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :sex_1, '男' %>
+      <%= f.radio_button :sex, '男' %><br />
+      <%= f.label :sex_2, '女' %>
+      <%= f.radio_button :sex, '女' %>
+    </div>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  
+    <div class="field">
+      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off" %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>

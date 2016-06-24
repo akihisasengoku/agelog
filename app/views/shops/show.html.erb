@@ -30,7 +30,7 @@
   <% end %>
   </ul>
 <% end %>
-<% if logged_in? %>
+<% if user_signed_in? %>
   <%= render 'shared/micropost_form' %>
   <%= render 'action', shop: @shop %>
 <% end %>

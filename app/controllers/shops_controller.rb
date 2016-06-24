@@ -10,7 +10,7 @@ class ShopsController < ApplicationController
   # GET /shops/1
   # GET /shops/1.json
   def show
-    @micropost = current_user.microposts.build if logged_in?
+    @micropost = current_user.microposts.build if user_signed_in?
     @microposts = @shop.microposts.order(created_at: :desc)
     @users = @shop.users.uniq
     @want_users = @shop.want_users
