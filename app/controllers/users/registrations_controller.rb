@@ -10,6 +10,8 @@ before_action :configure_account_update_params, only: [:update]
   # POST /resource
   def create
     super
+    @mypage = @user.build_mypage
+    @mypage.save
   end
 
   # GET /resource/edit
@@ -26,6 +28,26 @@ before_action :configure_account_update_params, only: [:update]
   def destroy
     super
   end
+  
+  def followings
+        @user = User.find(params[:id])
+        @following_users = @user.following_users
+    end
+  
+    def followers
+        @user = User.find(params[:id])
+        @follower_users = @user.follower_users
+    end
+    
+    def aged_shops
+        @user = User.find(params[:id])
+        @aged_shops = @user.age_shops
+    end
+    
+    def wanted_shops
+        @user = User.find(params[:id])
+        @wanted_shops = @user.want_shops
+    end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -51,7 +73,7 @@ before_action :configure_account_update_params, only: [:update]
   # The path used after sign up.
   def after_sign_up_path_for(resource)
     # super(resource)
-    edit_user_registration_path(resource)
+    edit_mypage_path(resource)
   end
 
   # The path used after sign up for inactive accounts.

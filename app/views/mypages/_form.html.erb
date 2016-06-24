@@ -1,0 +1,38 @@
+<% if user_signed_in? %>
+  <h2>情報を登録しましょう！</h2>
+  
+  <%= form_for(@mypage) do |f| %>
+    
+    <div class="field">
+      <%= f.label :coverimage %>
+      <%= f.file_field :coverimage %>
+    </div>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :sex_1, '男' %>
+      <%= f.radio_button :sex, '男' %><br />
+      <%= f.label :sex_2, '女' %>
+      <%= f.radio_button :sex, '女' %>
+    </div>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+  
+  
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+<% end %>

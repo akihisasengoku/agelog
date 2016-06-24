@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
+  # get 'new_mypage', to: 'mypages#new', as: 'user_root'
   # get 'users/registrations/new_after_signup', to: 'users/registrations#new'
   # post 'users/registrations/new_after_signup', to: 'users/registrations#create'
   # get 'signup', to: 'users#new'
@@ -17,7 +18,6 @@ Rails.application.routes.draw do
     :passwords     => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks" 
   }
-  resources :users, :only => [:index, :show]
   resources :users do
     member do
       get :followings
@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       # post :create_after_signup
     end
   end
+  resources :mypages, only: [:new, :show, :create, :edit, :update]
   # resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

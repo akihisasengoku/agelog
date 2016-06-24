@@ -2,9 +2,9 @@ crumb :root do
   link "Home", root_path
 end
 
-# user#show
-crumb :show_user do |show_user|
-  link show_user.name+"_"+show_user.title.to_s, user_path(show_user)
+# mypage#show
+crumb :show_mypage do |show_mypage|
+  link show_mypage.name+"_"+show_mypage.title.to_s, mypage_path(show_mypage)
   parent :root
 end
 

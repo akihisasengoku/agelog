@@ -47,6 +47,17 @@ ActiveRecord::Schema.define(version: 20160623233328) do
   add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at", using: :btree
   add_index "microposts", ["user_id"], name: "index_microposts_on_user_id", using: :btree
 
+  create_table "mypages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "sex"
+    t.text     "description"
+    t.text     "coverimage"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -108,13 +119,8 @@ ActiveRecord::Schema.define(version: 20160623233328) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name"
-    t.string   "title"
-    t.string   "sex"
-    t.text     "description"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.text     "coverimage"
     t.string   "provider"
     t.string   "uid"
     t.string   "token"
