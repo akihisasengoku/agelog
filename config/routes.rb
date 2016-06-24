@@ -24,8 +24,8 @@ Rails.application.routes.draw do
       get :followers
       get :wanted_shops
       get :aged_shops
-      get :new_after_signup
-      post :create_after_signup
+      # get :new_after_signup
+      # post :create_after_signup
     end
   end
   # resources :sessions, only: [:new, :create, :destroy]

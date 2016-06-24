@@ -6,11 +6,6 @@
     <%= devise_error_messages! %>
     
     <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true %>
-    </div>
-    
-    <div class="field">
       <%= f.label :coverimage %>
       <%= f.file_field :coverimage %>
     </div>
@@ -33,10 +28,6 @@
       <%= f.text_field :description %>
     </div>
   
-    <div class="field">
-      <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-      <%= f.password_field :current_password, autocomplete: "off" %>
-    </div>
   
     <div class="actions">
       <%= f.submit "Update" %>
@@ -50,6 +41,7 @@
   <%= link_to "Back", :back %>
 
 <% else %>
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
 <% end %>
