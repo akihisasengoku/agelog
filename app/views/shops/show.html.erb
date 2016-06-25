@@ -35,25 +35,22 @@
   <%= render 'action', shop: @shop %>
 <% end %>
 
-<% if @microposts.any? %>
+<% @microposts.each do |m| %>
   <div class="microposts">
-    <% @microposts.each do |m| %>
       <div class="micropost">
-        <h2><%= link_to m.user.name, user_path(m.user.id) %></h2>
+        <h2><%= link_to m.user.mypage.name, mypage_path(m.user.mypage) %></h2>
         <p><%= m.content %></p>
       </div>
-    <% end %>
-  </div>
-  
-  <div class="users">
-    <h2>All Users</h2>
-    <ul>
-      <% @users.each do |u| %>
-        <li><%= link_to u.name, user_path(u.id) %></li>
-      <% end %>
-    </ul>
   </div>
 <% end %>
+<div class="users">
+  <h2>All Users</h2>
+  <ul>
+    <% @users.each do |u| %>
+      <li><%= link_to u.mypage.name, mypage_path(u.mypage) %></li>
+    <% end %>
+  </ul>
+</div>
 
 <%= link_to 'Edit', edit_shop_path(@shop) %>
 <%= link_to 'Back', shops_path %>
