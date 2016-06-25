@@ -4,4 +4,5 @@
     <h2><%= link_to @mypage.name, mypage_path(@mypage) %></h2>
     <p><%= @mypage.title %></p>
     <p><%= @mypage.description %></p>
+    <%= render 'follow_form' %>
 </div>

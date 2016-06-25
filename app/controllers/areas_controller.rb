@@ -11,6 +11,11 @@ class AreasController < ApplicationController
   # GET /areas/1
   # GET /areas/1.json
   def show
+    if params[:id] == 1
+      @shops = Area.all
+    else
+      @shops = @area.shops
+    end
   end
 
   # GET /areas/new

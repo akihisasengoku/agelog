@@ -31,6 +31,11 @@ $(function(){
         var	map	= L.map('shopMap').setView([lat, lng],	15);
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
+    } else if ($('#areaMap').length) {
+        var areaName = $('#areaName').text(); // get area name
+        var	map	= L.map('areaMap').setView([lat, lng],	15);
+        mapCreate(map);
+        areaHavingShopsMarkerPlot(map);
     }
     
     // create map
@@ -57,11 +62,57 @@ $(function(){
         return initialMarker;
     }
     
-    // plot all shops already reviewed
+    // Plot all shops already reviewed
     function reviewedShopsMarkerPlot(mapObj) {
         $('#wrapLatlngInfo').find('.latlngInfo').each(function() {
             var that = $(this);
             var	tmpMarker	= new L.marker([that.find('.latInfo').text(), that.find('.lngInfo').text()]);
+            tmpMarker.addTo(mapObj);
+        });
+    }
+    
+    // Show shops related to areas on the area/show map
+    function areaHavingShopsMarkerPlot(mapObj) {
+        var shopTotalNum = parseInt($('#shopTotalNum').text());
+        for (var i=0; i < shopTotalNum; i++){
+            var latInfoId = '#latInfo-' + i;
+            var lngInfoId = '#lngInfo-' + i;
+            var shopNameId = '#shopNameInfo-' + i;
+            var shopAgeCount =  '#shopAgeCount-' + i;
+            var shopCategoryInfo = '#shopCategoryInfo-' + i;
+            
+            
+            var	tmpMarker	= new L.marker([$(latInfoId).text(), $(lngInfoId).text()]);
+            
+            var shopName = $(shopNameId).text();
+            var ageNum = $(shopAgeCount).text();
+            var shopCategoryTotalNumId = '#shopCategoryTotalNum-' + i;
+            var shopCategoryTotalNum = parseInt($(shopCategoryTotalNumId).text());
+            
+            var html = '<div class="wrapPopup"><div class="popupShopName">' + shopName + ' | ' + ageNum + '</div>';
+            if (shopCategoryTotalNum > 0) {
+                var $shopCategoryInfo = $(shopCategoryInfo);
+                html += '<p>ジャンル：</p><ul class="list-inline">';
+                for (var j=0; j < shopCategoryTotalNum; j++) {
+                    var categoryName = '#categoryName-' + j;
+                    html += '<li>' + $shopCategoryInfo.find(categoryName).text() + '</li>';
+                }
+                html += '</ul>';
+            }
+            
+            html += '</div>'
+            
+            tmpMarker.bindPopup(html).addTo(mapObj);
+        }
+        $('#wrapShopsInfo').find('.latlngInfo').each(function(i) {
+            var that = $(this);
+            var latInfoId = '#latInfo-' + i;
+            var lngInfoId = '#lngInfo-' + i;
+            var shopNameId = '#shopNameInfo-' + i;
+            var	tmpMarker	= new L.marker([that.find(latInfoId).text(), that.find(lngInfoId).text()]);
+            tmpMarker.on('click', function() {
+               var shopName = that.find('.')
+            });
             tmpMarker.addTo(mapObj);
         });
     }

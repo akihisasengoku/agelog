@@ -1,8 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+
+<div id="areaMap"></div>
+<div id="areaName" hidden><%= @area.name %></div>
+<style>#areaMap{width:500px;height:400px;}</style>
+<%= render 'shared/yahoo_credit' %>
+
+<div id="wrapShopsInfo" hidden>
+<div id="shopTotalNum" hidden><%= @shops.count %></div>
+  <% @shops.each_with_index do |shop, i| %>
+    <div id=<%= "latlngInfo-#{i}" %>>
+      <div id=<%= "latInfo-#{i}" %> hidden><%= shop.latitude.to_s %></div>
+      <div id=<%= "lngInfo-#{i}" %> hidden><%= shop.longitude.to_s %></div>
+      <div id=<%= "shopNameInfo-#{i}" %> hidden><%= shop.name %></div>
+      <div id=<%= "shopAgeCount-#{i}" %> hidden><%= shop.age_users.count %></div>
+      <div id=<%= "shopCategoryInfo-#{i}" %>>
+        <div id=<%= "shopCategoryTotalNum-#{i}" %> hidden><%= shop.categories.count %></div>
+        
+        <% shop.categories.each_with_index do |sc, j| %>
+          <div id=<%= "categoryName-#{j}" %> hidden><%= sc.name %></div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 <p>
   <strong>Name:</strong>
-  <%= @area.name %>
+  
 </p>
 
 <%= link_to 'Edit', edit_area_path(@area) %> |

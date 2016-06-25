@@ -1,0 +1,13 @@
+<div class="profile-navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><%= link_to "ホーム", root_path %></li>
+                <li><%= link_to "フォロー", followings_user_path(@user) %></li>
+                <li><%= link_to "フォロワー", followers_user_path(@user) %></li>
+                <li><%= link_to "Ageた店リスト", aged_shops_user_path(@user) %></li>
+                <li><%= link_to "行きたい店リスト", wanted_shops_user_path(@user) %></li>
+            </ul>
+        </div>
+    </nav>
+</div>
