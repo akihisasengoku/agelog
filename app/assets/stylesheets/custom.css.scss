@@ -63,6 +63,9 @@ p {
 
 .headerForm {
   margin: 12px 0 0 0;
+  .headerForm {
+    text-align: center;
+  }
   input {
     margin: 0;
     padding: 2px 12px;
