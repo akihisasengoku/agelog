@@ -4,7 +4,6 @@
 /* universal */
 
 body {
-  padding-top: 60px;
 }
 
 section {
@@ -52,20 +51,26 @@ p {
 
 /* header */
 
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
+.logo {
+  margin:6px 0 0 0;
+  font-size: 1.5em;
 }
 
-#logo:hover {
+.logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.headerForm {
+  margin: 12px 0 0 0;
+  input {
+    margin: 0;
+    padding: 2px 12px;
+  }
+}
+
+.alert {
+  margin: 0;
 }
 
 /* mixins, variables, etc. */
@@ -82,7 +87,6 @@ $gray-medium-light: #eaeaea;
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -103,6 +107,20 @@ input {
   @extend .has-error;
   .form-control {
     color: $state-danger-text;
+  }
+}
+
+/* links */
+.letsFind {
+  padding-top: 40px;
+}
+
+.categoryLinks, .areaLinks {
+  h2 {
+    margin-top: 0;
+  }
+  ul {
+    text-align: center;
   }
 }
 

@@ -5,4 +5,8 @@ class StaticPagesController < ApplicationController
     @areas = Area.all
   end
   
+  def introduce
+    @categories = Category.all
+    @areas = Area.all
+  end
 end

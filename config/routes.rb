@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
-  # get 'new_mypage', to: 'mypages#new', as: 'user_root'
-  # get 'users/registrations/new_after_signup', to: 'users/registrations#new'
-  # post 'users/registrations/new_after_signup', to: 'users/registrations#create'
+  get 'introduce', to: 'static_pages#introduce'
   # get 'signup', to: 'users#new'
   # get 'login', to: 'sessions#new'
   # post 'login', to: 'sessions#create'
   # get 'following', to: 'static_pages#show'
   # get 'follower', to: 'static_pages#show'
   # get 'wanted_shops', to: 'static_pages#show'
-  # get 'aged_shops', to: 'static_pages#show'
+  
   # delete 'logout', to: 'sessions#destroy'
   
   devise_for :users, :controllers => {
@@ -24,8 +22,6 @@ Rails.application.routes.draw do
       get :followers
       get :wanted_shops
       get :aged_shops
-      # get :new_after_signup
-      # post :create_after_signup
     end
   end
   resources :mypages, only: [:new, :show, :create, :edit, :update]

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>AGELOGとは？</h2>
+    <p class="text-center">AGELOGは、名工大周辺に特化したグルメ・レストラン紹介＆レビューサイトです。</p>
+    <p class="text-center">人気のまぜそばや学生向け大盛り定食屋など、あなたのお気に入りのお店を見つけてレビューしましょう！</p>
+    <p class="text-center">自分がオススメしたい素敵なお店には、そのお店のページで"AGE"ボタンを押してみましょう！</p>
+    <p class="text-center">名工大生みんなで名工大周辺の有名店から隠れ家スポットまで調べ尽くしてキャンパスライフをエンジョイしましょう！</p>
+</div>
+<div class="container">
+    <h2 class="letsFind">お店を探してみよう！</h2>
+    <div class="row">
+        <div class="categoryLinks col-sm-6">
+            <div class="panel panel-default">
+                <h2 class="panel-heading">カテゴリーから探す↓</h2>
+                <ul class="list-inline panel-body">
+                    <% @categories.each do |cat| %>
+                        <li><%= link_to cat.name, category_path(cat) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <div class="areaLinks col-sm-6">
+            <div class="panel panel-default">
+                <h2 class="panel-heading">エリアから探す↓</h2>
+                <ul class="list-inline panel-body">
+                    <% @areas.each do |area| %>
+                        <li><%= link_to area.name+"エリア", area_path(area) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

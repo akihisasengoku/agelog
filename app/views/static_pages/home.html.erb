@@ -1,37 +1,41 @@
 <div class="container">
-    <div class="wrapPhotoArea">
-        <div class="openPhoto">
-            
+    <div class="row">
+            <div class="wrapPhotoArea col-sm-8">
+                <div class="openPhoto">
+                    
+                </div>
+                <div class="photoRanking">
+                    <div class="firstPhoto">1</div>
+                    <div class="firstPhoto">2</div>
+                    <div class="firstPhoto">3</div>
+                </div>
+                
+                <div class="selectablePhotoCategories">
+                    <div class="ageRank">アゲランク</div>
+                    <div class="populalityRank">人気急上昇</div>
+                    <div class="menRank">男子に人気</div>
+                    <div class="womenRank">女子に人気</div>
+                </div>
+            </div>
+            <div class="wrapAreaMap col-sm-4">イメージ</div>
+    </div>
+    
+    <div class="row">
+        <div class="categoriesLinks col-sm-6">
+            <h2>カテゴリーから探す</h2>
+            <ul class="list-inline">
+                <% @categories.each do |cat| %>
+                    <li><%= link_to cat.name, category_path(cat) %></li>
+                <% end %>
+            </ul>
         </div>
-        <div class="photoRanking">
-            <div class="firstPhoto">1</div>
-            <div class="firstPhoto">2</div>
-            <div class="firstPhoto">3</div>
-        </div>
-        
-        <div class="selectablePhotoCategories">
-            <div class="ageRank">アゲランク</div>
-            <div class="populalityRank">人気急上昇</div>
-            <div class="menRank">男子に人気</div>
-            <div class="womenRank">女子に人気</div>
+        <div class="areaLinks col-sm-6">
+            <h2>エリアから探す</h2>
+            <ul>
+                <% @areas.each do |area| %>
+                    <li><%= link_to area.name, area_path(area) %></li>
+                <% end %>
+            </ul>
         </div>
     </div>
-</div>
-
-<div class="wrapAreaMap"></div>
-
-<div class="categoriesIndex">
-    <% @categories.each do |cat| %>
-        <div class="categoryBlock">
-            <h2><%= link_to cat.name, category_path(cat) %></h2>
-        </div>
-    <% end %>
-</div>
-
-<div class="areaIndex">
-    <% @areas.each do |area| %>
-        <div class="areaBlock">
-            <h2><%= link_to area.name, area_path(area) %></h2>
-        </div>
-    <% end %>
 </div>
