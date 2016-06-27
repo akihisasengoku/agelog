@@ -4,7 +4,7 @@ end
 
 # mypage#show
 crumb :show_mypage do |show_mypage|
-  link show_mypage.name+"_"+show_mypage.title.to_s, mypage_path(show_mypage)
+  link show_mypage.name+"の"+show_mypage.title.to_s, mypage_path(show_mypage)
   parent :root
 end
 

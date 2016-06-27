@@ -3,6 +3,6 @@ class Mypage < ActiveRecord::Base
     validates :title, length: { maximum: 20 }
     validates :description, length: { maximum: 166 }
     mount_uploader :coverimage, ImageUploader
-    mount_uploader :icon, ImageUploader
+    mount_uploader :icon, IconUploader
     belongs_to :user
 end

@@ -1,13 +1,12 @@
 <div class="profile-navbar">
     <div class="container">
         <nav>
-            <ul class="nav nav-tabs">
-                <li><%= link_to "ホーム", root_path %></li>
-                <li><%= link_to "フォロー", followings_user_path(@user) %></li>
-                <li><%= link_to "フォロワー", followers_user_path(@user) %></li>
-                <li><%= link_to "Ageた店リスト", aged_shops_user_path(@user) %></li>
-                <li><%= link_to "行きたい店リスト", wanted_shops_user_path(@user) %></li>
-                <% if signed_in? %>
+            <ul id="mypageLists" class="nav nav-tabs">
+                <li class="mypageList"><%= link_to "フォロー", followings_user_path(@user) %></li>
+                <li class="mypageList"><%= link_to "フォロワー", followers_user_path(@user) %></li>
+                <li class="mypageList"><%= link_to "Ageた店リスト", aged_shops_user_path(@user) %></li>
+                <li class="mypageList"><%= link_to "行きたい店リスト", wanted_shops_user_path(@user) %></li>
+                <% if signed_in? && request.url.include?('mypages') %>
                     <% if @mypage != current_user.mypage %>
                         <li id="followCondition" class="followEditBtn">
                             <%= render 'mypages/follow_form' %>

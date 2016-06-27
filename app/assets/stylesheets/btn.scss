@@ -1,3 +1,4 @@
+@import "color";
 .btn {
   margin: 10px;
   padding: 12px 25px;
@@ -19,4 +20,59 @@
 }
 .btn-round {
   border-radius: 20px !important;
+}
+
+.btn-submit {
+    background: $deepOrange;
+    
+    &:hover, &:focus {
+        background: $lightOrange;
+    }
+}
+
+// .btn-default {
+//     background: $deepOrange;
+    
+//     &:hover, &:focus {
+//         background: $lightOrange;
+//     }
+// }
+
+#twitter-signupForm {
+    background: $twitterBtn;
+    a {
+        color: $white;
+        &:hover, &:focus {
+            color: $white;
+            underline: none;
+        }
+    }
+    
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+}
+
+
+
+#facebook-signupForm {
+    background: $facebookBtn;
+    a {
+        color: $white;
+        &:hover {
+            color: $white;
+            underline: none;
+        }
+    }
+    
+    &:hover, &:focus {
+        opacity: 0.8;
+    }
+}
+
+.omniauthLoginBtn {
+    .btn-default {
+        margin: 10px 0 15px 0;
+        width: 100%;
+    }
 }

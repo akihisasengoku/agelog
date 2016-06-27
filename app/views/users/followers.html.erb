@@ -1,26 +1,11 @@
-<div class="wrapFollow">
+<div class="container">
     <% if @user.follower_users.any? %>
-        <% @user.follower_users.each do |follower| %>
-            <%= follower.name %>
-            <%= follower.id %>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div class="icon">
-                        <%= gravatar_for(follower, 50) %>
-                    </div>
-                    <div class="followBtn">
-                        <h2><%= follower.mypage.title %></h2>
-                        <%= render 'mypages/follow_form' %>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <h3><%= follower.mypage.title %></h3>
-                    <p><%= follower.mypage.description %></p>
-                </div>
-            </div>
+        <% @user.follower_users.each do |user| %>
+            <%= render 'followers', u: user %>
         <% end %>
     <% else %>
-        <p>まだ誰にもフォローされていません。</p>
+        <p>まだ誰もフォローしていません。誰かフォローしてみよう！</p>
     <% end %>
 </div>
+<div id="listName" hidden>フォロワー</div>
 <%= render 'shared/listlink' %>

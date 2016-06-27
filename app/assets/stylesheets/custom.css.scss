@@ -52,9 +52,28 @@ p {
 }
 
 /* header */
+.logo {
+  margin:6px 0 0 0;
+  font-size: 1.5em;
+  
+  a {
+    color: $mediumOrange;
+    
+    &:hover {
+      background: transparent;
+      color: #lightOrange;
+      text-decoration: none;
+    }
+    
+    &:visited {
+      color: $mediumOrange;
+    }
+  }
+  
+}
 .gNav {
   .navbar-default {
-    background: #e8ffc5;
+    background: $lightGreen;
   }
   
   .iconSmall {
@@ -67,14 +86,10 @@ p {
     }
   }
   
-}
-.logo {
-  margin:6px 0 0 0;
-  font-size: 1.5em;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
+  .alert {
+    margin: 0;
   }
+  
 }
 
 .headerForm {
@@ -86,17 +101,15 @@ p {
   }
 }
 
-.signupBtn {
-  background: $signupBtn;
+.navbar-default .navbar-nav > li > a.signupBtn {
+  background: $deepOrange;
+  color: #fff;
 }
 
 .navbar-default .navbar-nav > li > a.signupBtn:hover, .navbar-default .navbar-nav > li > a.signupBtn:focus {
-  background: $signupBtnHover;
+  background: $lightOrange;
 }
 
-.alert {
-  margin: 0;
-}
 
 /* mixins, variables, etc. */
 
@@ -255,4 +268,13 @@ footer {
   .navbar-default {
     background: #dd9f72;
   }
+}
+
+/* breadcrumbs */
+.breadcrumbs {
+  margin-bottom: 20px;
+}
+span.current {
+    font-weight: bold;
+    font-size: 0.95em;
 }

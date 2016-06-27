@@ -1,41 +1,53 @@
 <% if user_signed_in? %>
-  <h2>情報を登録しましょう！</h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h2>情報を登録しましょう！</h2>
   
-  <%= form_for(@mypage) do |f| %>
-    
-    <div class="field">
-      <%= f.label :coverimage %>
-      <%= f.file_field :coverimage %>
-    </div>
-    <div class="field">
-      <%= f.label :icon %>
-      <%= f.file_field :icon %>
-    </div>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :sex_1, '男' %>
-      <%= f.radio_button :sex, '男' %><br />
-      <%= f.label :sex_2, '女' %>
-      <%= f.radio_button :sex, '女' %>
-    </div>
-    <div class="field">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_field :description %>
+        <%= form_for(@mypage) do |f| %>
+          
+          <div class="form-group">
+            <%= f.label :coverimage %>
+            <%= f.file_field :coverimage, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :icon %>
+            <%= f.file_field :icon, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :sex_1, '男' %>
+            <%= f.radio_button :sex, '男' %><br />
+            <%= f.label :sex_2, '女' %>
+            <%= f.radio_button :sex, '女' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :title %>
+            <%= f.text_field :title, :class => 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_field :description, :class => 'form-control' %>
+          </div>
+        
+        
+          <div class="actions text-center">
+            <%= f.submit "Update", :class => 'btn btn-submit' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   
-  
-    <div class="actions">
-      <%= f.submit "Update" %>
-    </div>
-  <% end %>
+  </div>
 <% else %>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3"></div>
+    </div>
+  </div>
   <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
   <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>

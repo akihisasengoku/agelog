@@ -1,22 +1,11 @@
 <div class="container">
     <% if @user.following_users.any? %>
-        <% @user.following_users.each do |following| %>
-            <div class="wrapFollow">
-                <div class="wrapProfile">
-                    <div class="profileCover"><%= image_tag following.mypage.coverimage_url(:background) %></div>
-                    <div class="profileHeader">
-                        <div class="iconImage"><%= image_tag following.mypage.icon_url(:thumb) %></div>
-                        <h2><%= link_to following.mypage.name, mypage_path(following.mypage) %></h2>
-                        <div class="infoArea">
-                            <h3><%= following.mypage.title %></h3>
-                            <p><%= following.mypage.description %></p>
-                        </div>
-                    </div>    
-                </div>
-            </div>
+        <% @user.following_users.each do |user| %>
+            <%= render 'followers', u: user %>
         <% end %>
     <% else %>
         <p>まだ誰もフォローしていません。誰かフォローしてみよう！</p>
     <% end %>
 </div>
+<div id="listName" hidden>フォロー</div>
 <%= render 'shared/listlink' %>

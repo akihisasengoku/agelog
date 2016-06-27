@@ -1,9 +1,19 @@
 $(function(){
     var areaName = $('#areaName').text();
     $('#areaNav').find('li').each(function() {
-        areaName = areaName.slice(0, $(this).text().length);
-       if ($(this).text() == areaName) {
-           $(this).addClass('active');
+        var that = $(this);
+        var text = that.text();
+        areaName = areaName.slice(0, text.length);
+       if (text == areaName) {
+           that.addClass('active');
        } 
+    });
+    
+    var listName = $('#listName').text();
+    $('#mypageLists').find('.mypageList').each(function() {
+        var that = $(this);
+        if (that.find('a').text() == listName) {
+            that.addClass('active');
+        } 
     });
 });

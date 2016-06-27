@@ -2,10 +2,15 @@ $(function(){
     // central point of NIT
     lat = 35.1565645;
     lng = 136.9247428;
-    
+    var options = {
+        scrollWheelZoom: false,
+        touchZoom: false,
+        tap: false
+    };
+
     // div#mapFormの時のみ
     if($('#mapForm').length){
-        var	map	= L.map('mapForm').setView([lat, lng],	15);
+        var	map	= L.map('mapForm', options).setView([lat, lng], 15);
         mapCreate(map);
         var marker;
         
@@ -17,24 +22,24 @@ $(function(){
         var markerLat = markerLatLng[0]
         var markerLng = markerLatLng[1]
         
-        var	map	= L.map('mapEditForm').setView([markerLat, markerLng], 17);
+        var	map	= L.map('mapEditForm', options).setView([markerLat, markerLng], 17);
         mapCreate(map);
         var marker = inititalMarkerPlot();
         map.on('click', function(e){
             marker = onMapClick(e);
         });
     } else if ($('#userMap').length) { //div#userMapがある時、つまりusers/showの時
-        var	map	= L.map('userMap').setView([lat, lng],	15);
+        var	map	= L.map('userMap', options).setView([lat, lng], 15);;
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
     } else if ($('#shopMap').length) {
-        var	map	= L.map('shopMap').setView([lat, lng],	15);
+        var	map	= L.map('shopMap', options).setView([lat, lng], 15);
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
     } else if ($('#areaMap').length) {
         var areaName = $('#areaName').text(); // get area name
         var latlngZoom = getAreaLatlngzoom(areaName);
-        var	map	= L.map('areaMap').setView([latlngZoom[0], latlngZoom[1]],	latlngZoom[2]);
+        var	map	= L.map('areaMap', options).setView([latlngZoom[0], latlngZoom[1]],	latlngZoom[2]);
         mapCreate(map);
         
         areaHavingShopsMarkerPlot(map);

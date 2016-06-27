@@ -8,7 +8,7 @@
   <nav class="navbar navbar-default">
     <div class="container">
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-1">
           <h1 class="logo"><%= link_to "Agelog", root_path, class: 'logo' %></h1>
         </div>
         <div class="headerForm col-sm-6">
@@ -20,11 +20,12 @@
           
         <% end %>
         </div>
-        <nav class="col-sm-4">
+        <nav class="col-sm-5">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Top", root_path %></li>
             <li><%= link_to "What is AGELOG?", introduce_path %></li>
             <% if user_signed_in? %>
+              <li><%= link_to 'Mypage', mypage_path(current_user.id) %></li>
               <li class="dropdown iconSmall">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                   <% if !current_user.mypage.icon.nil? %>

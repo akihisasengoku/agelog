@@ -1,0 +1,13 @@
+<div class="wrapFollow">
+    <div class="wrapProfile">
+        <div class="profileCover"><%= image_tag u.mypage.coverimage_url(:background) %></div>
+        <div class="profileHeader">
+            <div class="iconImage"><%= link_to image_tag(u.mypage.icon_url(:thumb)), mypage_path(u.mypage) %></div>
+            <h2><%= link_to u.mypage.name, mypage_path(u.mypage) %></h2>
+            <div class="infoArea">
+                <h3><%= u.mypage.title %></h3>
+                <p><%= u.mypage.description %></p>
+            </div>
+        </div>    
+    </div>
+</div>
