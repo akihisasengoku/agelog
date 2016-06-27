@@ -33,9 +33,26 @@ $(function(){
         reviewedShopsMarkerPlot(map);
     } else if ($('#areaMap').length) {
         var areaName = $('#areaName').text(); // get area name
-        var	map	= L.map('areaMap').setView([lat, lng],	15);
+        var latlngZoom = getAreaLatlngzoom(areaName);
+        var	map	= L.map('areaMap').setView([latlngZoom[0], latlngZoom[1]],	latlngZoom[2]);
         mapCreate(map);
+        
         areaHavingShopsMarkerPlot(map);
+    }
+    
+    // get area's lat lng zoomSize [lat, lng, zoomSize]
+    function getAreaLatlngzoom(areaName) {
+        if (areaName == "全体") {
+            return [lat, lng, 15];
+        } else if (areaName == "鶴舞") {
+            return [35.156889,136.91554, 17];
+        } else if (areaName == "吹上") {
+            return [35.1570039, 136.9320468, 16];
+        } else if (areaName == "御器所") {
+            return [35.1527483, 136.9294969, 16];
+        } else if (areaName == "千種") {
+            return [35.161368, 136.9222794, 16];
+        }
     }
     
     // create map

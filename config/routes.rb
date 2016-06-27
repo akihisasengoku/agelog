@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root to: 'static_pages#home'
   get 'introduce', to: 'static_pages#introduce'
+  get 'faq', to: 'static_pages#faq'
+  get 'contact', to: 'static_pages#contact'
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
   # get 'signup', to: 'users#new'
   # get 'login', to: 'sessions#new'
   # post 'login', to: 'sessions#create'

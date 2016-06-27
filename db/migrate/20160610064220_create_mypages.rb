@@ -6,6 +6,7 @@ class CreateMypages < ActiveRecord::Migration
       t.string :sex
       t.text :description
       t.text :coverimage
+      t.text :icon
       t.integer :user_id
 
       t.timestamps null: false

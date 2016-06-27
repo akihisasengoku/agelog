@@ -1,39 +1,30 @@
-<p id="notice"><%= notice %></p>
-<% breadcrumb :show_mypage, @mypage %>
-<div class="profileContainer">
-<%= render 'shared/user_info' %>
-<div id="userMap"></div>
-<style>#userMap{height:500px;width:600px;}</style>
-<%= render 'shared/yahoo_credit' %>
-<%= render 'shared/listlink' %>
-</div><!--profileContainer-->
-<div class="wrapMicroposts">
-    <% if signed_in? %>
-        <div id="followCondition">
-            <%= render 'follow_form' %>
+<div class="container">
+    <p id="notice"><%= notice %></p>
+    <% breadcrumb :show_mypage, @mypage %>
+    <div class="row">
+        <div class="col-sm-5">
+            <%= render 'shared/user_info' %>
         </div>
-    <% end %>
-    <% if @shops.any? %>
-        <div id="wrapLatlngInfo" hidden>
-            <% @shops.each do |s| %>
-                <div class="latlngInfo">
-                    <div class="latInfo" hidden><%= s.latitude.to_s %></div>
-                    <div class="lngInfo" hidden><%= s.longitude.to_s %></div>
-                </div>
-            <% end %>
+        <div class="col-sm-7">
+            <div id="userMap"></div>
+            <%= render 'shared/yahoo_credit' %>
         </div>
-    <% end %>
-    <% if !@microposts.empty? %>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <% if !@microposts.empty? %>
       <div class="microposts">
         <% @microposts.each do |m| %>
-          <div class="micropost">
-            <%= link_to m.shop.name, shop_path(m.shop.id) %>
-            <%= m.content %>
+              <div class="micropost">
+                <%= link_to m.shop.name, shop_path(m.shop.id) %>
+                <%= m.content %>
+              </div>
+            <% end %>
           </div>
         <% end %>
-      </div>
-    <% end %>
+        </div>
+    </div>
+</div><!--container-->
+<div class="container-fluid">
+    <%= render 'shared/listlink' %>
 </div>
-
-<%= link_to 'Edit', edit_user_path(@user) %>
-<%= link_to 'Back', users_path %>

@@ -10,7 +10,6 @@ class MypagesController < ApplicationController
   # GET /mypages/1
   # GET /mypages/1.json
   def show
-    @micropost = @user.microposts.build if signed_in?
     @microposts = @user.microposts.order(created_at: :desc)
     @shops = @user.shops.order(created_at: :desc)
   end
@@ -66,6 +65,6 @@ class MypagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mypage_params
-      params.require(:mypage).permit(:name, :sex, :title, :description, :coverimage)
+      params.require(:mypage).permit(:name, :sex, :title, :description, :coverimage, :icon)
     end
 end

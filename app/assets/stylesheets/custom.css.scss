@@ -1,9 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "color";
 
 /* universal */
 
 body {
+  background-color: $bodyColor !important; 
 }
 
 section {
@@ -50,26 +52,46 @@ p {
 }
 
 /* header */
-
+.gNav {
+  .navbar-default {
+    background: #e8ffc5;
+  }
+  
+  .iconSmall {
+    a {
+      padding: 5px 15px;
+    }
+    img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+}
 .logo {
   margin:6px 0 0 0;
   font-size: 1.5em;
-}
-
-.logo:hover {
-  color: #fff;
-  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
 }
 
 .headerForm {
   margin: 12px 0 0 0;
-  .headerForm {
-    text-align: center;
-  }
+  text-align: center;
   input {
     margin: 0;
     padding: 2px 12px;
   }
+}
+
+.signupBtn {
+  background: $signupBtn;
+}
+
+.navbar-default .navbar-nav > li > a.signupBtn:hover, .navbar-default .navbar-nav > li > a.signupBtn:focus {
+  background: $signupBtnHover;
 }
 
 .alert {
@@ -217,5 +239,20 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+/* footer */
+footer {
+  .navbar {
+    margin: 40px 0 0 0;
+    ul {
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+  
+  .navbar-default {
+    background: #dd9f72;
   }
 }

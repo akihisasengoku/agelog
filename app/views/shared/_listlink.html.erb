@@ -1,12 +1,25 @@
 <div class="profile-navbar">
-    <div class="container-fluid">
+    <div class="container">
         <nav>
-            <ul class="nav navbar-tabs">
+            <ul class="nav nav-tabs">
                 <li><%= link_to "ホーム", root_path %></li>
                 <li><%= link_to "フォロー", followings_user_path(@user) %></li>
                 <li><%= link_to "フォロワー", followers_user_path(@user) %></li>
                 <li><%= link_to "Ageた店リスト", aged_shops_user_path(@user) %></li>
                 <li><%= link_to "行きたい店リスト", wanted_shops_user_path(@user) %></li>
+                <% if signed_in? %>
+                    <% if @mypage != current_user.mypage %>
+                        <li id="followCondition" class="followEditBtn">
+                            <%= render 'mypages/follow_form' %>
+                        </li>
+                    <% else %>
+                        <li class="followEditBtn">
+                            <%= button_tag :type => "button", :class =>"btn btn-default btn-s-md" do %>
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>  <%= link_to 'Edit mypage', edit_mypage_path(current_user.id), :class => "editBtn" %>
+                            <% end %>
+                        </li>
+                    <% end %>
+                <% end %>
             </ul>
         </nav>
     </div>

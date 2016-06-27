@@ -1,3 +1,106 @@
 // Place all the styles related to the Mypages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "color";
+#userMap {
+    height:450px;
+}
+.wrapProfile {
+    position: relative;
+    .profileCover {
+        height: 270px;
+        overflow: hidden;
+        img#coverImage {
+           display: block;
+           position: absolute;
+           top:0;
+        }
+        
+    }
+    .profileHeader {
+        .iconImage {
+            position: absolute;
+            top: 140px;
+            left: 10px;
+        }
+        h2 {
+            margin-top: 20px;
+            padding: 0 5px 0 220px;
+            //text-align: inherit;
+            font-size: 24px;
+        }
+        .infoArea {
+            position: absolute;
+            top: 335px;
+            left: 15px;
+        }
+    }
+}
+
+.profile-navbar {
+    position: relative;
+    .followEditBtn {
+        position: absolute;
+        right: 55px;
+        button {
+            margin: 0;
+            padding: 6px 20px;
+            color: #00a388;
+        }
+        button.follow:hover {
+            background-color: #beeb9f;
+        }
+        button.unfollow {
+            background-color: #00a388;
+            color: $white;
+        }
+        button.unfollow:hover {
+            background-color: #dd9f72;
+            color: $white;
+        }
+        a.editBtn {
+            background: none;
+            text-decoration: none;
+        }
+    }
+}
+
+.wrapFollow {
+    float: left;
+    width: 33%;
+    .wrapProfile {
+        position: relative;
+        .profileCover {
+            height: 150px;
+            overflow: hidden;
+            img#coverImage {
+               display: block;
+               position: absolute;
+               top:0;
+            }
+            
+        }
+        .profileHeader {
+            .iconImage {
+                position: absolute;
+                top: 100px;
+                left: 10px;
+            }
+            .iconImage img {
+                width: 100px;
+                height: 100px;
+            }
+            h2 {
+                margin-top: 20px;
+                padding: 0 5px 0 220px;
+                //text-align: inherit;
+                font-size: 24px;
+            }
+            .infoArea {
+                position: absolute;
+                top: 335px;
+                left: 15px;
+            }
+        }
+    }
+}

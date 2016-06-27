@@ -1,0 +1,25 @@
+<div class="container">
+    <h2 class="letsFind">お店を探してみよう！</h2>
+    <div class="row">
+        <div class="categoryLinks col-sm-6">
+            <div class="panel panel-default">
+                <h2 class="panel-heading">カテゴリーから探す↓</h2>
+                <ul class="list-inline panel-body">
+                    <% @categories.each do |cat| %>
+                        <li><%= link_to cat.name, category_path(cat) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+        <div class="areaLinks col-sm-6">
+            <div class="panel panel-default">
+                <h2 class="panel-heading">エリアから探す↓</h2>
+                <ul class="list-inline panel-body">
+                    <% @areas.each do |area| %>
+                        <li><%= link_to area.name+"エリア", area_path(area) %></li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

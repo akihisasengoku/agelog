@@ -11,6 +11,7 @@ class AreasController < ApplicationController
   # GET /areas/1
   # GET /areas/1.json
   def show
+    @areas = Area.all
     if params[:id] == 1
       @shops = Area.all
     else

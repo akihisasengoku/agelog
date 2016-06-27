@@ -1,9 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<div id="areaMap"></div>
-<div id="areaName" hidden><%= @area.name %></div>
-<style>#areaMap{width:500px;height:400px;}</style>
-<%= render 'shared/yahoo_credit' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      
+      <%= search_form_for @search, url: shops_path, :class => 'form-inline' do |f| %>
+          <div class="form-group"><%= f.select :areas_id_eq, options_from_collection_for_select(Area.all, :id, :name, @search.areas_id_eq), :class => 'form-control' %></div>
+          <div class="form-group"><%= f.select :categories_id_eq, options_from_collection_for_select(Category.all, :id, :name, @search.categories_id_eq), :class => 'form-control' %></div>
+          <div class="form-group"><%= f.text_field :name_cont ,placeholder: '検索テキストを入力...', :class => 'form-control textField' %></div>
+          <%= f.submit ("検索") , class: 'btn btn-default'%>
+          
+        <% end %>
+    </div>
+    <div class="col-sm-9">
+      <ul id="areaNav" class="nav nav-tabs">
+        <% @areas.each do |area| %>
+          <li><%= link_to area.name, area_path(area) %></li>
+        <% end %>
+      </ul>
+      <div id="areaMap"></div>
+      <div id="areaName" hidden><%= @area.name %></h2></div>
+      <%= render 'shared/yahoo_credit' %>
+    </div>
+  </div>
+</div>
+
+
 
 <div id="wrapShopsInfo" hidden>
 <div id="shopTotalNum" hidden><%= @shops.count %></div>

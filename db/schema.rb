@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20160623233328) do
     t.string   "sex"
     t.text     "description"
     t.text     "coverimage"
+    t.text     "icon"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
