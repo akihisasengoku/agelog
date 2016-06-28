@@ -11,6 +11,7 @@ Area.create(:name => '全体')
 Area.create(:name => '鶴舞')
 Area.create(:name => '吹上')
 Area.create(:name => '御器所')
+Area.create(:name => '荒畑')
 Area.create(:name => '千種')
 
 Category.create(:name => 'ラーメン')

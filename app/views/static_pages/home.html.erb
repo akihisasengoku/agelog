@@ -11,13 +11,28 @@
                 </div>
                 
                 <div class="selectablePhotoCategories">
-                    <div class="ageRank">アゲランク</div>
+                    <div class="ageRank">
+                        アゲランク
+                        <% @age_shops.each do |shop| %>
+                            <h2><%= shop.name %></h2>
+                        <% end %>
+                    </div>
                     <div class="populalityRank">人気急上昇</div>
                     <div class="menRank">男子に人気</div>
                     <div class="womenRank">女子に人気</div>
                 </div>
             </div>
-            <div class="wrapAreaMap col-sm-4">イメージ</div>
+            <div class="wrapAreaMap col-sm-4">
+                <h2>エリアから探す</h2>
+                <%= image_tag 'areamap_df.png', :id => 'topAreaMap', :usemap => '#topAreaMap', :class => 'text-center' %>
+                <map name="topAreaMap" id="topAreaMapTag">
+                    <area shape="poly" coords="35,130,122,130,105,235,115,235,110,272,10,272" href="areas/2" alt=<%= image_path("areamap_tsurumai_ov.png") %>>
+                    <area shape="poly" coords="205,120,300,120,290,190,255,190,250,215,190,215" href="areas/3" alt=<%= image_path("areamap_fukiage_ov.png") %>>
+                    <area shape="poly" coords="235,225,275,225,265,290,225,290" href="areas/4" alt=<%= image_path("areamap_gokiso_ov.png") %>>
+                    <!--<area shape="poly" coords="130,225,225,225,115,310,210,310" href="areas/5" alt=<%= image_path("areamap_arahata_ov.png") %>>-->
+					<area shape="poly" coords="70,10,280,10,265,85,200,85,197,110,55,110" href="areas/5" alt=<%= image_path("areamap_chikusa_ov.png") %>>
+				</map>
+            </div>
     </div>
     
     <div class="row">
