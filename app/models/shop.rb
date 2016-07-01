@@ -6,11 +6,9 @@ class Shop < ActiveRecord::Base
     has_many :microposts
     has_many :users, through: :microposts
     
-    has_many :user_shops, foreign_key: "shop_id", dependent: :destroy
-    has_many :users, through: :user_shops
-    has_many :wants, class_name: "Want", foreign_key: "shop_id", dependent: :destroy
+    has_many :wants, foreign_key: "shop_id", dependent: :destroy
     has_many :want_users, through: :wants, source: :user
-    has_many :ages, class_name: "Age", foreign_key: "shop_id", dependent: :destroy
+    has_many :ages, foreign_key: "shop_id", dependent: :destroy
     has_many :age_users, through: :ages, source: :user
     
     has_many :shop_categories

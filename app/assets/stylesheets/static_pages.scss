@@ -3,21 +3,77 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "color";
 /* top */
-.wrapAreaMap {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background: $mediumGreen;
+
+.wrapHomeTop {
+    overflow: hidden;
+    
     
     h2 {
-        margin: 0 15px;
-        padding: 15px 0 0;
-        background: $mediumGreen;
+        margin: 0;
+        padding: 5px 0;
         font-weight: bold;
         color: $white;
     }
     
-    #topAreaMap {
-        border: 15px solid $mediumGreen;
+    .wrapPhotoArea {
+        float: left;
+        width: 595px;
+        height: 350px;
+        h2 {
+            background: $mediumGreen;
+        }
+        
+        .openPhoto {
+            float: left;
+            margin: 0 6px 0 0;
+            width: 360px;
+            height: 270px;
+            background: $white;
+        }
+        
+        .rank {
+            float: left;
+            margin-bottom: 5px;
+            width: 110px;
+            height: 50px;
+            background: #fff;
+            cursor: pointer;
+        }
+        
+        .rank:nth-child(2n-1) {
+            margin-right: 5px;
+        }
+        .selectablePhotoCategories {
+            clear: both;
+            margin: 5px 0 0;
+            height: 50px;
+            background: #fff;
+            
+            .selectableRank {
+                float: left;
+                width: 50%;
+                height: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .wrapAreaMap {
+        float: right;
+        text-align: center;
+        background: $mediumGreen;
+        h2 {
+            
+        }
+        
+        #topAreaMap {
+            border: 10px solid $mediumGreen;
+            border-top: none;
+        }
     }
 }
+
+
+
+
+

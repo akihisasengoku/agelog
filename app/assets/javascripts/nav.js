@@ -3,10 +3,10 @@ $(function(){
     $('#areaNav').find('li').each(function() {
         var that = $(this);
         var text = that.text();
-        areaName = areaName.slice(0, text.length);
-       if (text == areaName) {
-           that.addClass('active');
-       } 
+        var currentAreaName = areaName.slice(0, text.length);
+        if (text == currentAreaName) {
+            that.addClass('active');
+        } 
     });
     
     var listName = $('#listName').text();

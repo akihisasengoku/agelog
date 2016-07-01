@@ -3,11 +3,11 @@ class StaticPagesController < ApplicationController
   before_action :setAllCategoriesAndAreas
   
   def home
-    @age_id = Age.group(:shop_id).order('count_shop_id desc').limit(3).count(:shop_id).keys
-    @age_shops = Shop.find(@age_id).sort_by{|i| @age_id.index(i.id)}
+    @age_shop_id = Age.group(:shop_id).order('count_shop_id desc').limit(3).count(:shop_id).keys
+    @age_shops = Shop.find(@age_shop_id).sort_by{|i| @age_shop_id.index(i.id)}
     
-    
-    @want_shops = Shop.all.sort_by{|shop|shop.ages.count}
+    @want_shop_id = Want.group(:shop_id).order('count_shop_id desc').limit(3).count(:shop_id).keys
+    @want_shops = Shop.find(@want_shop_id).sort_by{|i| @want_shop_id.index(i.id)}
   end
   
   def introduce

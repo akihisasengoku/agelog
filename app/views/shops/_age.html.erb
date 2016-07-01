@@ -1,4 +1,5 @@
-<%= link_to "Age↑" , user_shops_path(shop_id: shop.id , type: "Age"),
-                      :class => "age-#{shop.id} btn-age btn btn-warning btn-sm",
+<%= link_to "Age↑" , ages_path(shop_id: shop.id),
+                      :class => "btn-age btn btn-warning btn-sm",
+                      :id => "ageSubmit",
                       :remote => true,
                       :method => :post %>

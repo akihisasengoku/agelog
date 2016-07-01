@@ -1,0 +1,9 @@
+$('#ageSubmit, #wantSubmit').prop("disabled", true);
+var time = 1000;
+var unage = function() {
+    var ageCount = $('#ageCount');
+    $('#ageSubmit').replaceWith("<%= escape_javascript(render('shops/age', shop: @shop)) %>");
+    ageCount.html(parseInt(ageCount.text())-1);
+}
+setTimeout(unage, time);
+$('#ageSubmit,#wantSubmit').removeAttr('disabled');

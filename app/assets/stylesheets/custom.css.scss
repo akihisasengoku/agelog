@@ -5,7 +5,8 @@
 /* universal */
 
 body {
-  background-color: $bodyColor !important; 
+  background-color: $bodyColor !important;
+  font-weight: bold;
 }
 
 section {
@@ -35,6 +36,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-weight: bolder;
 }
 
 h2 {
@@ -42,19 +44,29 @@ h2 {
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
-  font-weight: normal;
   color: #777;
 }
 
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+  font-weight: bold;
+}
+
+/* typography design */
+
+.findHead {
+  display: block;
+  padding: 15px 10px;
+  background: $mediumOrange;
+  border-radius: 15px;
 }
 
 /* header */
 .logo {
-  margin:6px 0 0 0;
+  margin:9px 0 0 0;
   font-size: 1.5em;
+  text-align: left;
   
   a {
     color: $mediumOrange;
@@ -78,11 +90,11 @@ p {
   
   .iconSmall {
     a {
-      padding: 5px 15px;
+      padding: 10px 15px;
     }
     img {
-      width: 40px;
-      height: 40px;
+      width: 30px;
+      height: 30px;
     }
   }
   
@@ -90,11 +102,15 @@ p {
     margin: 0;
   }
   
+  .form-inline .textField {
+    width: 140px;
+  }
+  
 }
 
 .headerForm {
   margin: 12px 0 0 0;
-  text-align: center;
+  text-align: right;
   input {
     margin: 0;
     padding: 2px 12px;
@@ -278,3 +294,4 @@ span.current {
     font-weight: bold;
     font-size: 0.95em;
 }
+

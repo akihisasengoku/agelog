@@ -55,6 +55,8 @@ $(function(){
             return [35.1570039, 136.9320468, 16];
         } else if (areaName == "御器所") {
             return [35.1527483, 136.9294969, 16];
+        } else if (areaName == "荒畑") {
+            return [35.1527483, 136.9294969, 16];
         } else if (areaName == "千種") {
             return [35.161368, 136.9222794, 16];
         }

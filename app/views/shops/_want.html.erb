@@ -1,4 +1,5 @@
-<%= link_to "Want to go" , user_shops_path(shop_id: shop.id , type: "Want") ,
-                      :class => "want-#{shop.id} btn-want btn btn-warning btn-sm",
+<%= link_to "Want to go" , wants_path(shop_id: shop.id),
+                      :class => "btn-want btn btn-warning btn-sm",
+                      :id => "wantSubmit",
                       :remote => true,
                       :method => :post %>

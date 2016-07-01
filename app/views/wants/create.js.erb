@@ -1,0 +1,8 @@
+var speed = 1000;
+var want = function() {
+    var wantCount = $('#wantCount');
+    $('#wantSubmit').replaceWith("<%= escape_javascript(render('shops/unwant' , shop: @shop)) %>");
+    wantCount.html(parseInt(wantCount.text())+1);
+}
+setTimeout(want, speed);
+$('#ageSubmit,#wantSubmit').removeAttr('disabled');

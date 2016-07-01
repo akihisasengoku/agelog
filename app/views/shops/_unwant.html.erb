@@ -1,6 +1,7 @@
 <%= link_to "Wanted" , 
-    user_shop_path(current_user.wants.find_by(:shop_id => shop.id),
-        shop_id: shop.id, type: "Want"),
-    :class => "want-#{shop.id} btn-want btn btn-warning btn-sm",
+    want_path(current_user.wants.find_by(:shop_id => shop.id),
+        shop_id: shop.id),
+    :class => "btn-want btn btn-warning btn-sm",
+    :id => "wantSubmit",
     :remote => true,
     :method => :delete %>

@@ -11,10 +11,7 @@ class User < ActiveRecord::Base
   
   has_many :microposts
   has_many :shops, through: :microposts
-
-  has_many :user_shops, foreign_key: "user_id", dependent: :destroy
-  has_many :shops, through: :user_shops
-
+  
   has_many :wants, class_name: "Want", foreign_key: "user_id", dependent: :destroy
   has_many :want_shops, through: :wants, source: :shop
   has_many :ages, class_name: "Age", foreign_key: "user_id", dependent: :destroy
@@ -29,7 +26,6 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
   
-  has_many :maps
   
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
@@ -66,8 +62,8 @@ class User < ActiveRecord::Base
   end
 
   def unwant(shop)
-     want = wants.find_by(shop_id: shop.id)
-     want.destroy if want
+      want = wants.find_by(shop_id: shop.id)
+      want.destroy if want
   end
 
   def wanted?(shop)

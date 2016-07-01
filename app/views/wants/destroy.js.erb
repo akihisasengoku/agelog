@@ -1,0 +1,8 @@
+var time = 1000;
+var unwant = function() {
+    var wantCount = $('#wantCount');
+    $('#wantSubmit').replaceWith("<%= escape_javascript(render('shops/want' , shop: @shop)) %>");
+    wantCount.html(parseInt(wantCount.text())-1);
+}
+setTimeout(unwant, time);
+$('#ageSubmit,#wantSubmit').removeAttr('disabled');

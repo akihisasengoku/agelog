@@ -9,7 +9,6 @@ $ ->
         -> 
             $(this).hover(
                 ->
-                    console.log(topAreaMap.attr('src'))
                     topAreaMap.attr('src', $(this).attr('alt'))
                 ->
                     topAreaMap.attr('src', topAreaMapSrc)

@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623233328) do
+ActiveRecord::Schema.define(version: 20160630220047) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "ages", force: :cascade do |t|
+    t.integer  "shop_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ages", ["shop_id", "user_id"], name: "index_ages_on_shop_id_and_user_id", unique: true, using: :btree
 
   create_table "areas", force: :cascade do |t|
     t.string   "name"
@@ -24,13 +33,6 @@ ActiveRecord::Schema.define(version: 20160623233328) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "maps", force: :cascade do |t|
-    t.float    "latitude"
-    t.float    "longitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -97,18 +99,6 @@ ActiveRecord::Schema.define(version: 20160623233328) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_shops", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "shop_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "type"
-  end
-
-  add_index "user_shops", ["shop_id"], name: "index_user_shops_on_shop_id", using: :btree
-  add_index "user_shops", ["user_id", "shop_id"], name: "index_user_shops_on_user_id_and_shop_id", unique: true, using: :btree
-  add_index "user_shops", ["user_id"], name: "index_user_shops_on_user_id", using: :btree
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -129,6 +119,15 @@ ActiveRecord::Schema.define(version: 20160623233328) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "wants", force: :cascade do |t|
+    t.integer  "shop_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "wants", ["shop_id", "user_id"], name: "index_wants_on_shop_id_and_user_id", unique: true, using: :btree
 
   add_foreign_key "microposts", "users"
 end

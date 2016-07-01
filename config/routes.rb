@@ -36,10 +36,9 @@ Rails.application.routes.draw do
   resources :categories
   resources :shops
   resources :areas
-  resources :user_shops, only: [:create, :destroy]
+  resources :ages, only: [:create, :destroy]
+  resources :wants, only: [:create, :destroy]
   
-  
-  # Rails.application.routes.draw do
   #   devise_for :users, controllers: {
   #     sessions: 'users/sessions'
   #   }

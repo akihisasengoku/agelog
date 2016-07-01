@@ -56,7 +56,7 @@ class MypagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_mypage
-      @mypage = Mypage.find(params[:id])
+      @mypage = Mypage.find_by(user_id: params[:id])
     end
     
     def set_user
