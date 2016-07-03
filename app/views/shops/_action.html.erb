@@ -1,15 +1,21 @@
-<div class="action" id="speedTest">
-  <% if current_user.wanted?(shop) %>
-    <%= render 'shops/unwant' , shop: shop %>
+<div class="action">
+  <% if user_signed_in? %>
+    <% if current_user.wanted?(shop) %>
+      <%= render 'shops/unwant' , shop: shop %>
+    <% else %>
+      <%= render 'shops/want' , shop: shop %>
+    <% end %> 
+    <p id="wantCount"><%= shop.want_users.count %></p>
+  
+    <% if current_user.aged?(shop) %>
+      <%= render 'shops/unage' , shop: shop %>
+    <% else %>
+      <%= render 'shops/age' , shop: shop %>
+    <% end %>
+    <p id="ageCount"><%= shop.age_users.count %></p>
   <% else %>
-    <%= render 'shops/want' , shop: shop %>
-  <% end %> 
-  <p id="wantCount"><%= shop.want_users.count %></p>
-
-  <% if current_user.aged?(shop) %>
-    <%= render 'shops/unage' , shop: shop %>
-  <% else %>
-    <%= render 'shops/age' , shop: shop %>
+    <%= link_to "アゲ↑", new_user_registration_path, :class => "btn btn-warning btn-sm" %>
+    <%= link_to "行きたい！", new_user_registration_path, :class => "btn btn-warning btn-sm" %>
   <% end %>
-  <p id="ageCount"><%= shop.age_users.count %></p>
+  
 </div>

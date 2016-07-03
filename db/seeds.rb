@@ -38,6 +38,24 @@ Category.create(:name => '揚げ物')
 Category.create(:name => '隠れ家')
 Category.create(:name => '居酒屋')
 
+Shop.create(:name => "shop1", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
+Shop.create(:name => "shop2", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
+Shop.create(:name => "shop3", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
+Shop.create(:name => "shop4", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
+Shop.create(:name => "shop5", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
+Shop.create(:name => "向日葵", :address => "愛知県名古屋市中区千代田2-15-18 名古屋通信ビルB1", :latitude => "35.156372", :longitude => "136.915262")
+Shop.create(:name => "ムガルパレス ２号店", :address => "愛知県 名古屋市中区 千代田 5丁目11-33 クマザキビルビル1F", :latitude => "35.160022", :longitude => "136.920181")
+Shop.create(:name => "炭火やきとり 豆鳥", :address => "愛知県 名古屋市中区 千代田 5-17-15 田中コーポラス1F", :latitude => "35.158431", :longitude => "136.917331")
+Shop.create(:name => "鶴舞Perch", :address => "愛知県 名古屋市中区 千代田 3-15-19 メゾン千代田　B1F", :latitude => "35.154151", :longitude => "136.914681")
+Shop.create(:name => "広島鉄板居酒屋 来い鯉", :address => "愛知県 名古屋市中区 千代田 3-12-5", :latitude => "35.155731", :longitude => "136.916659")
+Shop.create(:name => "もつ焼き百蔵", :address => "愛知県 名古屋市中区 千代田 3-11-12 モモセビル 1F", :latitude => "35.155667", :longitude => "136.915743")
+Shop.create(:name => "焼肉市場さくら×さくら", :address => "愛知県名古屋市中区新栄２-47-50", :latitude => "35.16175", :longitude => "136.922447")
+Shop.create(:name => "鳥貴族 鶴舞店", :address => "愛知県 名古屋市中区 千代田 3-11-9 2F", :latitude => "35.155659", :longitude => "136.915315")
+Shop.create(:name => "笑笑 鶴舞駅前店", :address => "愛知県 名古屋市中区 千代田 3-11-9 鶴舞駅前ビル 2F", :latitude => "35.15585", :longitude => "136.915551")
+
+
+
+
 
 User.create(:email => 'test1@test.com', :password =>  'password', :password_confirmation => 'password')
 User.create(:email => 'test2@test.com', :password =>  'password', :password_confirmation => 'password')
@@ -96,6 +114,11 @@ User.create(:email => 'test50@test.com', :password =>  'password', :password_con
     Mypage.create(:name => %(test"#{i}"), :user_id => i)
 }
 
-Shop.create(:name => "shop1", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
 
 
+
+
+1.upto(10){ |i|
+    User.find("1").age(Shop.find(i))
+    User.find("1").want(Shop.find(i))
+}

@@ -30,6 +30,15 @@
     }
 }
 
+.btn-aged, .btn-wanted {
+    background: $mediumGreen;
+    
+    &:hover, &:focus {
+        background: $mediumOrange;
+    }
+}
+
+
 // .btn-default {
 //     background: $deepOrange;
     

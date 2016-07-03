@@ -1,7 +1,7 @@
-<%= link_to "Aged↑" , 
+<%= link_to "アゲ↑" , 
     age_path(current_user.ages.find_by(:shop_id => shop.id),
         shop_id: shop.id),
-    :class => "btn-age btn btn-warning btn-sm",
+    :class => "btn-aged btn btn-warning btn-sm",
     :id => "ageSubmit",
     :remote => true,
     :method => :delete %>

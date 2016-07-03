@@ -1,34 +1,29 @@
-<div class="container">
+<div class="container override">
     <div class="wrapHomeTop clearfix">
         <div class="wrapPhotoArea">
             <h2>飲食店ランキング</h2>
-            <div class="openPhoto">
-                
+            <div class="openPhoto" id="mainPhoto">
+                <a href="#" id="mainPhotoLink"></a>
             </div>
-            <div class="photoRanking">
-                <div class="rank" id="rank1">1</div>
-                <div class="rank" id="rank2">2</div>
-                <div class="rank" id="rank3">3</div>
-                <div class="rank" id="rank4">1</div>
-                <div class="rank" id="rank5">2</div>
-                <div class="rank" id="rank6">3</div>
-                <div class="rank" id="rank7">1</div>
-                <div class="rank" id="rank8">2</div>
-                <div class="rank" id="rank9">3</div>
-                <div class="rank" id="rank10">3</div>
+            <div class="photoRanking" id="ranks">
+                <% @age_shops.each_with_index do |a_s, i| %>
+                    <div class="rank" id=<%= "rank-#{i}" %> data-src=<%= shop_path(a_s) %>><%= image_tag a_s.mainimage_url %></div>
+                <% end %>
             </div>
             
             <div class="selectablePhotoCategories">
                 <div class="selectableRank" id="age_shops">
                     アゲランク
-                    <% @age_shops.each do |s| %>
-                        <div hidden><%= s.name %></div>
+                    <div class="wrapRankInfoHidden">
+                        <% @age_shop_id.each do |a_s_id| %>
+                        <div hidden><%= link_to "", shop_path(a_s_id) %></div>
                     <% end %>
+                    </div>
                 </div>
                 <div class="selectableRank" id="age_shops">
                     行きたいお店
-                    <% @want_shops.each do |s| %>
-                        <div hidden><%= s.name %></div>
+                    <% @want_shop_id.each do |w_s_id| %>
+                        <div hidden><%= link_to "", shop_path(w_s_id) %></div>
                     <% end %>
                 </div>
                 <!--<div class="populalityRank">人気急上昇</div>-->
@@ -43,8 +38,8 @@
                 <map name="topAreaMap" id="topAreaMapTag">
                     <area shape="poly" coords="44,130,133,130,116,235,126,235,121,272,21,272" href="areas/1" alt=<%= image_path("areamap_tsurumai_ov.png") %>>
                     <area shape="poly" coords="214,120,311,120,301,190,266,190,261,215,201,215" href="areas/2" alt=<%= image_path("areamap_fukiage_ov.png") %>>
-                    <area shape="poly" coords="246,225,286,225,276,290,236,290" href="areas/3" alt=<%= image_path("areamap_gokiso_ov.png") %>>
-                    <area shape="poly" coords="130,225,225,225,115,310,210,310" href="areas/4" alt=<%= image_path("areamap_arahata_ov.png") %>>
+                    <area shape="poly" coords="246,225,296,225,286,290,236,290" href="areas/3" alt=<%= image_path("areamap_gokiso_ov.png") %>>
+                    <area shape="poly" coords="138,225,235,225,222,310,123,310" href="areas/4" alt=<%= image_path("areamap_arahata_ov.png") %>>
 					<area shape="poly" coords="81,10,291,10,276,85,211,85,208,110,66,110" href="areas/5" alt=<%= image_path("areamap_chikusa_ov.png") %>>
 				</map>
 			</div>
