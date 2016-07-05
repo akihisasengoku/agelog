@@ -3,7 +3,6 @@ class CreateMicrostars < ActiveRecord::Migration
     create_table :microstars do |t|
       t.integer :micropost_id
       t.integer :user_id
-      t.integer :microstars_count
 
       t.timestamps null: false
       

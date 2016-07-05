@@ -87,11 +87,13 @@ class User < ActiveRecord::Base
   
   def microstar(micropost)
     microstars.find_or_create_by(micropost_id: micropost.id)
+    micropost.update_attribute(:microstars_count, micropost.microstars_count+1)
   end
   
   def unmicrostar(micropost)
     microstar = microstars.find_by(micropost_id: micropost.id)
     microstar.destroy if microstar
+    micropost.update_attribute(:microstars_count, micropost.microstars_count-1)
   end
   
   def microstar?(micropost)

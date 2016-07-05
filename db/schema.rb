@@ -41,8 +41,9 @@ ActiveRecord::Schema.define(version: 20160703214920) do
     t.integer  "user_id"
     t.text     "content"
     t.text     "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "microstars_count", default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.integer  "shop_id"
   end
 
@@ -53,9 +54,8 @@ ActiveRecord::Schema.define(version: 20160703214920) do
   create_table "microstars", force: :cascade do |t|
     t.integer  "micropost_id"
     t.integer  "user_id"
-    t.integer  "microstars_count"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "microstars", ["micropost_id", "user_id"], name: "index_microstars_on_micropost_id_and_user_id", unique: true, using: :btree
