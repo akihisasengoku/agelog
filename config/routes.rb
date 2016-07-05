@@ -5,14 +5,6 @@ Rails.application.routes.draw do
   get 'contact', to: 'static_pages#contact'
   get 'terms', to: 'static_pages#terms'
   get 'privacy', to: 'static_pages#privacy'
-  # get 'signup', to: 'users#new'
-  # get 'login', to: 'sessions#new'
-  # post 'login', to: 'sessions#create'
-  # get 'following', to: 'static_pages#show'
-  # get 'follower', to: 'static_pages#show'
-  # get 'wanted_shops', to: 'static_pages#show'
-  
-  # delete 'logout', to: 'sessions#destroy'
   
   devise_for :users, :controllers => {
     :sessions      => "users/sessions",
@@ -29,10 +21,10 @@ Rails.application.routes.draw do
     end
   end
   resources :mypages, only: [:new, :show, :create, :edit, :update]
-  # resources :sessions, only: [:new, :create, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :microposts, only: [:create, :destroy] do
+    resources :microstars, only: [:create, :destroy]
+  end
   resources :relationships, only: [:create, :destroy]
-  # resources :maps
   resources :categories
   resources :shops
   resources :areas

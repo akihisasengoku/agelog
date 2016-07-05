@@ -1,0 +1,13 @@
+<div class="action">
+  <% if user_signed_in? %>
+    <% if current_user.microstar?(micropost) %>
+      <%= render 'shared/unmicrostar' , { micropost: micropost } %>
+    <% else %>
+      <%= render 'shared/microstar' , { micropost: micropost } %>
+    <% end %> 
+    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span><p id=<%="microstarCount-#{micropost.id}"%>><%= micropost.star_users.count %></p>
+  <% else %>
+    <%= link_to "いいね↑", new_user_registration_path, :class => "btn btn-warning btn-sm" %>
+  <% end %>
+  
+</div>

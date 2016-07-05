@@ -1,0 +1,2 @@
+module MicrostarsHelper
+end

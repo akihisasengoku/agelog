@@ -1,0 +1,5 @@
+<%= link_to "いいねぇえぇ", micropost_microstars_path(micropost_id: micropost.id),
+                      :class => "btn btn-submit microstar-button",
+                      :id => "microstar-#{micropost.id}",
+                      :remote => true,
+                      :method => :post %>

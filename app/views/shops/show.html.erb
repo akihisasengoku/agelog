@@ -55,14 +55,19 @@
   <%= render 'shared/micropost_form' %>
 <% end %>
 
-<% @microposts.each do |m| %>
+
+
+
+<% @microposts.each do |micropost| %>
   <div class="microposts">
-      <div class="micropost">
-        <h2><%= link_to m.user.mypage.name, mypage_path(m.user.mypage) %></h2>
-        <p><%= m.content %></p>
-      </div>
+    <div class="micropost">
+      <h2><%= link_to micropost.user.mypage.name, mypage_path(micropost.user.mypage) %></h2>
+      <p><%= micropost.content %></p>
+      <%= render 'shared/microstar_action', { micropost: micropost } %>
+    </div>
   </div>
 <% end %>
+
 <div class="users">
   <h2>All Users</h2>
   <ul>

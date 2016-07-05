@@ -1,0 +1,5 @@
+<%= link_to "ed", micropost_microstar_path(current_user.microstars.find_by(micropost_id: micropost.id), micropost_id: micropost.id),
+                      :class => "btn btn-submit microstar-button",
+                      :id => "microstar-#{micropost.id}",
+                      :remote => true,
+                      :method => :delete %>

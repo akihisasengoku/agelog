@@ -1,5 +1,5 @@
 <%= link_to "アゲ↑" , 
-    age_path(current_user.ages.find_by(:shop_id => shop.id),
+    age_path(current_user.ages.find_by(shop_id: shop.id),
         shop_id: shop.id),
     :class => "btn-aged btn btn-warning btn-sm",
     :id => "ageSubmit",

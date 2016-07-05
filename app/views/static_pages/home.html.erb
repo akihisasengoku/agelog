@@ -7,7 +7,7 @@
             </div>
             <div class="photoRanking" id="ranks">
                 <% @age_shops.each_with_index do |a_s, i| %>
-                    <div class="rank" id=<%= "rank-#{i}" %> data-src=<%= shop_path(a_s) %>><%= image_tag a_s.mainimage_url %></div>
+                    <div class="rank" id=<%= "rank-#{i}" %> data-src=<%= shop_path(a_s) %>><%= image_tag(a_s.mainimage) %></div>
                 <% end %>
             </div>
             
