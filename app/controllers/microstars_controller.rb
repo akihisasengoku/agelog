@@ -23,6 +23,8 @@ class MicrostarsController < ApplicationController
   end
   # @age_shop_id = Age.group(:shop_id).order('count_shop_id desc').limit(10).count(:shop_id).keys
   # @age_shops = Shop.find(@age_shop_id).sort_by{|i| @age_shop_id.index(i.id)}
+  
+  # Get shop's :mainimage from micropost which has the most stars 
   def updateNewShopImage(micropost)
     microstar_count = micropost.star_users.count
     shop = micropost.shop
