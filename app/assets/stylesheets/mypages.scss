@@ -62,11 +62,11 @@
     
     .followEditBtn {
         position: absolute;
-        top: 8px;
+        top: 2px;
         right: 0;
         button {
             margin: 0;
-            padding: 6px 20px;
+            padding: 0;
             color: #00a388;
         }
         button.follow:hover {
@@ -81,8 +81,14 @@
             color: $white;
         }
         a.editBtn {
+            display: inline-block;
+            padding: 10px 10px 10px 0;
             background: none;
             text-decoration: none;
+        }
+        
+        .glyphicon {
+            padding-left: 10px;
         }
     }
     
@@ -128,3 +134,4 @@
         }
     }
 }
+

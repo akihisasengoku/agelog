@@ -62,14 +62,14 @@ ActiveRecord::Schema.define(version: 20160703214920) do
 
   create_table "mypages", force: :cascade do |t|
     t.string   "name"
-    t.string   "title"
+    t.string   "title",       default: "マイページタイトル"
     t.string   "sex"
-    t.text     "description"
+    t.text     "description", default: "マイページ説明文"
     t.text     "coverimage"
     t.text     "icon"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "relationships", force: :cascade do |t|
