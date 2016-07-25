@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :follower_users, through: :follower_relationships, source: :follower
   
+  has_many :microstars, class_name: "Microstar", foreign_key: "user_id", dependent: :destroy
+  has_many :star_microposts, through: :microstars, source: :micropost
   
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
@@ -45,42 +47,57 @@ class User < ActiveRecord::Base
   
 
   def follow(other_user)
-      following_relationships.find_or_create_by(followed_id: other_user.id)
+    following_relationships.find_or_create_by(followed_id: other_user.id)
   end
 
   def unfollow(other_user)
-      following_relationship = following_relationships.find_by(followed_id: other_user.id)
-      following_relationship.destroy if following_relationship
+    following_relationship = following_relationships.find_by(followed_id: other_user.id)
+    following_relationship.destroy if following_relationship
   end
 
   def following?(other_user)
-      following_users.include?(other_user)
+    following_users.include?(other_user)
   end
 
   def want(shop)
-      wants.find_or_create_by(shop_id: shop.id)
+    wants.find_or_create_by(shop_id: shop.id)
   end
 
   def unwant(shop)
-      want = wants.find_by(shop_id: shop.id)
-      want.destroy if want
+    want = wants.find_by(shop_id: shop.id)
+    want.destroy if want
   end
 
   def wanted?(shop)
-      want_shops.include?(shop)
+    want_shops.include?(shop)
   end
 
   def age(shop)
-      ages.find_or_create_by(shop_id: shop.id)
+    ages.find_or_create_by(shop_id: shop.id)
   end
 
   def unage(shop)
-      age = ages.find_by(shop_id: shop.id)
-      age.destroy if age
+    age = ages.find_by(shop_id: shop.id)
+    age.destroy if age
   end
 
   def aged?(shop)
-      age_shops.include?(shop)
+    age_shops.include?(shop)
+  end
+  
+  def microstar(micropost)
+    microstars.find_or_create_by(micropost_id: micropost.id)
+    micropost.update_attribute(:microstars_count, micropost.microstars_count+1)
+  end
+  
+  def unmicrostar(micropost)
+    microstar = microstars.find_by(micropost_id: micropost.id)
+    microstar.destroy if microstar
+    micropost.update_attribute(:microstars_count, micropost.microstars_count-1)
+  end
+  
+  def microstar?(micropost)
+    star_microposts.include?(micropost)
   end
   
   

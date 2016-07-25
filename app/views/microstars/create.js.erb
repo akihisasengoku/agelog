@@ -1,0 +1,10 @@
+$('.microstar-button').prop("disabled", true);
+var speed = 1000;
+var microstar = function() {
+    var microstarCount = $('#microstarCount-<%= @micropost.id %>');
+    $('#microstar-<%= @micropost.id %>').replaceWith("<%= escape_javascript(render('shared/unmicrostar', { micropost: @micropost })) %>");
+    microstarCount.html(parseInt(microstarCount.text())+1);
+}
+setTimeout(microstar, speed);
+
+$('.microstar-button').removeAttr('disabled');

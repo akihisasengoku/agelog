@@ -4,11 +4,30 @@
   <div class="row">
     <div class="col-sm-3">
       
-      <%= search_form_for @search, url: shops_path, :class => 'form-inline' do |f| %>
-          <div class="form-group"><%= f.select :areas_id_eq, options_from_collection_for_select(Area.all, :id, :name, @search.areas_id_eq), :class => 'form-control' %></div>
-          <div class="form-group"><%= f.select :categories_id_eq, options_from_collection_for_select(Category.all, :id, :name, @search.categories_id_eq), :class => 'form-control' %></div>
-          <div class="form-group"><%= f.text_field :name_cont ,placeholder: '検索テキストを入力...', :class => 'form-control textField' %></div>
-          <%= f.submit ("検索") , class: 'btn btn-default'%>
+      <%= search_form_for @search, url: shops_path, :class => 'form areaForm' do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">エリアから探す</div>
+          <div class="panel-body">
+            <div class="form-group"><%= f.select :areas_id_eq, options_from_collection_for_select(Area.all, :id, :name, @search.areas_id_eq), :class => 'form-control' %></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">エリアから探す</div>
+          <div class="panel-body">
+            <div class="form-group"><%= f.select :categories_id_eq, options_from_collection_for_select(Category.all, :id, :name, @search.categories_id_eq), :class => 'form-control' %></div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">エリアから探す</div>
+          <div class="panel-body">
+            <div class="form-group"><%= f.text_field :name_cont ,placeholder: '検索テキストを入力...', :class => 'form-control textField' %></div>
+          </div>
+        </div>
+        <div class="wrapSubmit">
+          <%= f.submit ("絞り込む") , class: 'btn btn-submit'%>
+        </div>
+          
+          
           
         <% end %>
     </div>
@@ -45,12 +64,3 @@
     </div>
   <% end %>
 </div>
-
-
-<p>
-  <strong>Name:</strong>
-  
-</p>
-
-<%= link_to 'Edit', edit_area_path(@area) %>
-<%= link_to 'Back', areas_path %>

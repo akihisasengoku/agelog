@@ -5,4 +5,8 @@ module UsersHelper
         gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
         image_tag(gravatar_url, alt: user.mypage.name, class: "gravatar")
     end
+    
+    def microstar?(micropost)
+      star_microposts.include?(micropost)
+    end
 end

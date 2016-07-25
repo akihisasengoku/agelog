@@ -1,7 +1,7 @@
-<%= link_to "Wanted" , 
+<%= link_to "行きたい！" , 
     want_path(current_user.wants.find_by(:shop_id => shop.id),
         shop_id: shop.id),
-    :class => "btn-want btn btn-warning btn-sm",
+    :class => "btn-wanted btn btn-warning btn-sm",
     :id => "wantSubmit",
     :remote => true,
     :method => :delete %>
