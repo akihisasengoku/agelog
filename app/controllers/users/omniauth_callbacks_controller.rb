@@ -73,4 +73,5 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       session["devise.user_attributes"] = user.attributes
       redirect_to new_user_registration_url
     end
+  end
 end
