@@ -36,6 +36,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_oauth(request.env["omniauth.auth"])
  
     if @user.persisted?
+      @mypage = @user.build_mypage
+      @mypage.save
       set_flash_message(:notice, :success, :kind => "Twitter") if is_navigational_format?
       sign_in_and_redirect @user, :event => :authentication
     else
@@ -52,6 +54,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.find_for_oauth(request.env['omniauth.auth'])
 
     if @user.persisted?
+      @mypage = @user.build_mypage
+      @mypage.save
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else
