@@ -52,7 +52,7 @@
     <div id=<%= "latlngInfo-#{i}" %>>
       <div id=<%= "latInfo-#{i}" %> hidden><%= shop.latitude.to_s %></div>
       <div id=<%= "lngInfo-#{i}" %> hidden><%= shop.longitude.to_s %></div>
-      <div id=<%= "shopNameInfo-#{i}" %> hidden><%= shop.name %></div>
+      <div id=<%= "shopNameInfo-#{i}" %> hidden><%= link_to shop.name, shop_url(shop.id) %></div>
       <div id=<%= "shopAgeCount-#{i}" %> hidden><%= shop.age_users.count %></div>
       <div id=<%= "shopCategoryInfo-#{i}" %>>
         <div id=<%= "shopCategoryTotalNum-#{i}" %> hidden><%= shop.categories.count %></div>

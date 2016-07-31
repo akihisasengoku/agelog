@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="shopInfo">
+                <h2><%= @shop.name %></h2>
+                <div class="shopMainImage">
+                    
+                </div>
+                <div class="shopDetail">
+                    <dt>エリア | </dt>
+                    <% @shop.areas.each_with_index do |sa, j| %>
+                        <dd id=<%= "areaName-#{j}" %>><%= sa.name %></dd>
+                    <% end %>
+                    <dt>ジャンル | </dt>
+                    <% @shop.categories.each_with_index do |sc, j| %>
+                        <dd id=<%= "categoryName-#{j}" %>><%= sc.name %></dd>
+                    <% end %>
+                    <dt>住所 | </dt>
+                    <dd><%= @shop.address %></dd>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="col-sm-4">
+            <div id="shopMap"></div>
+            <%= render 'shared/yahoo_credit' %>
+            <div id="wrapLatlngInfo" hidden>
+              <div class="latlngInfo">
+                  <div class="latInfo" hidden><%= @shop.latitude.to_s %></div>
+                  <div class="lngInfo" hidden><%= @shop.longitude.to_s %></div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <% if @shop.microposts.any? %>
+                <% @shop.microposts.each do |m| %>
+                    <div class="shopMicropost">
+                        <p><%= m.content %></p>
+                        <%= render 'shared/microstar_action', { micropost: m } %>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>まだレビューがありません。最初のレビューを投稿してみませんか？</p>
+            <% end %>
+            
+        </div>
+        <div class="col-sm-4">
+            <div class="shopButtons">
+                <% if user_signed_in? %>
+                    <%= render 'shared/micropost_form' %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
