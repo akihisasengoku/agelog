@@ -29,11 +29,11 @@ $(function(){
             marker = onMapClick(e);
         });
     } else if ($('#userMap').length) { //div#userMapがある時、つまりusers/showの時
-        var	map	= L.map('userMap', options).setView([lat, lng], 15);;
+        var	map	= L.map('userMap', options).setView([lat, lng], 15);
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
     } else if ($('#shopMap').length) {
-        var	map	= L.map('shopMap', options).setView([lat, lng], 15);
+        var	map	= L.map('shopMap', options).setView([parseFloat($('.latInfo').text()), parseFloat($('.lngInfo').text())], 17);
         mapCreate(map);
         reviewedShopsMarkerPlot(map);
     } else if ($('#areaMap').length) {
@@ -56,7 +56,7 @@ $(function(){
         } else if (areaName == "御器所") {
             return [35.1527483, 136.9294969, 16];
         } else if (areaName == "荒畑") {
-            return [35.1527483, 136.9294969, 16];
+            return [35.1527483, 136.9194969, 16];
         } else if (areaName == "千種") {
             return [35.161368, 136.9222794, 16];
         }
@@ -108,7 +108,7 @@ $(function(){
             
             var	tmpMarker	= new L.marker([$(latInfoId).text(), $(lngInfoId).text()]);
             
-            var shopName = $(shopNameId).text();
+            var shopName = $(shopNameId).html();
             var ageNum = $(shopAgeCount).text();
             var shopCategoryTotalNumId = '#shopCategoryTotalNum-' + i;
             var shopCategoryTotalNum = parseInt($(shopCategoryTotalNumId).text());
@@ -135,7 +135,7 @@ $(function(){
             var shopNameId = '#shopNameInfo-' + i;
             var	tmpMarker	= new L.marker([that.find(latInfoId).text(), that.find(lngInfoId).text()]);
             tmpMarker.on('click', function() {
-               var shopName = that.find('.')
+               var shopName = that.find('.');
             });
             tmpMarker.addTo(mapObj);
         });
