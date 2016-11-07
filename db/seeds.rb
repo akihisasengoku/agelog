@@ -43,20 +43,12 @@ Category.create(:name => '居酒屋')
 Category.create(:name => '鉄板焼')
 Category.create(:name => '鳥料理')
 
-Form::Shop.create(:name => "shop1", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
-Form::Shop.create(:name => "shop2", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
-Form::Shop.create(:name => "shop3", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
-Form::Shop.create(:name => "shop4", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
-Form::Shop.create(:name => "shop5", :address => "toriaezu", :latitude => "35.1527163106303", :longitude => "136.930525302887")
-Form::Shop.find_by_name("shop1").areas << Area.find_by_name("荒畑")
-Form::Shop.find_by_name("shop1").categories << Category.find_by_name("焼き鳥")
-# Shop.find_by_name("shop1").shop_categories << Category.find_by_name("居酒屋")
 Form::Shop.create(:name => "向日葵", :address => "愛知県名古屋市中区千代田2-15-18 名古屋通信ビルB1", :latitude => "35.156372", :longitude => "136.915262")
 Form::Shop.find_by_name("向日葵").areas << Area.find_by_name("鶴舞")
 Form::Shop.find_by_name("向日葵").categories << Category.find_by_name("焼肉")
 Form::Shop.find_by_name("向日葵").categories << Category.find_by_name("居酒屋")
 Form::Shop.find_by_name("向日葵").categories << Category.find_by_name("鉄板焼")
-Form::Shop.create(:name => "ムガルパレス ２号店", :address => "愛知県 名古屋市中区 千代田 5丁目11-33 クマザキビルビル1F", :latitude => "35.160022", :longitude => "136.920181")
+Form::Shop.create(:name => "ムガルパレス ２号店", :address => "愛知県 名古屋市中区 千代田 5丁目11-33 クマザキビルビル1F", :latitude => "35.160022", :longitude => "136.920181", :mainimage => "shop_mugaruparesu.jpg")
 Form::Shop.find_by_name("ムガルパレス ２号店").areas << Area.find_by_name("鶴舞")
 Form::Shop.find_by_name("ムガルパレス ２号店").categories << Category.find_by_name("カレー")
 Form::Shop.find_by_name("ムガルパレス ２号店").categories << Category.find_by_name("インド料理")
@@ -81,9 +73,8 @@ Form::Shop.create(:name => "鳥貴族 鶴舞店", :address => "愛知県 名古�
 Form::Shop.find_by_name("鳥貴族 鶴舞店").areas << Area.find_by_name("鶴舞")
 Form::Shop.create(:name => "笑笑 鶴舞駅前店", :address => "愛知県 名古屋市中区 千代田 3-11-9 鶴舞駅前ビル 2F", :latitude => "35.15585", :longitude => "136.915551")
 Form::Shop.find_by_name("笑笑 鶴舞駅前店").areas << Area.find_by_name("鶴舞")
-
-
-
+Form::Shop.create(:name => "ヌンク ヌスク 鶴舞公園", :address => "愛知県名古屋市昭和区鶴舞１丁目１−１６８", :latitude => "35.154747", :longitude => "136.919422", :mainimage => "150x150_square_49553860.jpg")
+Form::Shop.find_by_name("ヌンク ヌスク 鶴舞公園").areas << Area.find_by_name("鶴舞")
 
 User.create(:email => 'test1@test.com', :password =>  'password', :password_confirmation => 'password')
 User.create(:email => 'test2@test.com', :password =>  'password', :password_confirmation => 'password')
@@ -149,4 +140,5 @@ User.create(:email => 'test50@test.com', :password =>  'password', :password_con
 1.upto(10){ |i|
     User.find("1").age(Shop.find(i))
     User.find("1").want(Shop.find(i))
+    User.find("2").age(Shop.find(i))
 }
