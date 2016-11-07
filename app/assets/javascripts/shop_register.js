@@ -7,6 +7,7 @@ $(function(){
         touchZoom: false,
         tap: false
     };
+    L.Icon.Default.imagePath = 'assets'
 
     // div#mapFormの時のみ
     if($('#mapForm').length){
