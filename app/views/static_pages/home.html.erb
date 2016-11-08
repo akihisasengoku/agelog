@@ -3,28 +3,30 @@
         <div class="wrapPhotoArea">
             <h2>飲食店ランキング</h2>
             <div class="openPhoto" id="mainPhoto">
-                <a href="#" id="mainPhotoLink"></a>
+                <%= link_to image_tag(@initialTopShop.mainimage), shop_path(@initialTopShop) %>
             </div>
             <div class="photoRanking" id="ranks">
                 <% @age_shops.each_with_index do |a_s, i| %>
-                    <div class="rank" id=<%= "rank-#{i}" %> data-src=<%= shop_path(a_s) %>><%= image_tag(a_s.mainimage) %></div>
+                    <div class="rank" id=<%= "rank-#{i}" %> data-src=<%= shop_path(a_s) %>>
+                        <%= link_to image_tag(a_s.mainimage), shop_path(a_s) %>>
+                    </div>
                 <% end %>
             </div>
             
             <div class="selectablePhotoCategories">
                 <div class="selectableRank" id="age_shops">
-                    アゲランク
-                    <div class="wrapRankInfoHidden">
-                        <% @age_shop_id.each do |a_s_id| %>
-                        <div hidden><%= link_to "", shop_path(a_s_id) %></div>
-                    <% end %>
-                    </div>
+                    <ol>
+                        <% @age_rank3.each_with_index do |a_s, i| %>
+                            <li><span class="rankNum">Age<%= i+1 %>位</span><%= link_to image_tag(a_s.mainimage), shop_path(a_s) %>></li>
+                        <% end %>
+                    </ol>
                 </div>
-                <div class="selectableRank" id="age_shops">
-                    行きたいお店
-                    <% @want_shop_id.each do |w_s_id| %>
-                        <div hidden><%= link_to "", shop_path(w_s_id) %></div>
-                    <% end %>
+                <div class="selectableRank" id="want_shops">
+                    <ol>
+                        <% @want_rank3.each_with_index do |w_s, i| %>
+                            <li><span class="rankNum">Want<%= i+1 %>位</span><%= link_to image_tag(w_s.mainimage), shop_path(w_s) %>></li>
+                        <% end %>
+                    </ol>
                 </div>
                 <!--<div class="populalityRank">人気急上昇</div>-->
                 <!--<div class="menRank">男子に人気</div>-->

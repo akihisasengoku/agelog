@@ -27,10 +27,19 @@
         
         .openPhoto {
             float: left;
+            position: relative;
             margin: 0 6px 0 0;
             width: 360px;
             height: 270px;
             background: $white;
+            overflow: hidden;
+            
+            img {
+                position: absolute;
+                bottom: 0;
+                margtin-top: -50px;
+                width: 100%;
+            }
         }
         
         .rank {
@@ -43,10 +52,16 @@
             cursor: pointer;
             overflow: hidden;
             
+            a {
+                display: block;
+                width: inherit;
+                height: inherit;
+            }
+            
             img {
                 position: absolute;
-                width: 100%;
                 bottom: 0;
+                width: 100%;
                 margin-top: -50px;
             }
         }
@@ -65,6 +80,39 @@
                 width: 50%;
                 height: 100%;
                 cursor: pointer;
+                
+                ol {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    height: inherit;
+                    
+                    li {
+                        float: left;
+                        position: relative;
+                        width: 33%;
+                        height: inherit;
+                        overflow: hidden;
+                        
+                        span {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: 9999;
+                            color: #ef9d44;
+                            background: $white;
+                            opacity: 0.9;
+                        }
+                        
+                        img {
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -25px;
+                            width: 100%;
+                        }
+                    }
+                    
+                }
             }
         }
     }
