@@ -6702,6 +6702,20 @@ button.close {
     display: none !important;
   }
 }
+/* line 5, /home/ubuntu/workspace/agelog/app/assets/stylesheets/areas.scss */
+.areaForm {
+  margin: 39px 0 0 0;
+  padding: 0 0 30px;
+}
+/* line 10, /home/ubuntu/workspace/agelog/app/assets/stylesheets/areas.scss */
+.areaForm .wrapSubmit .btn-submit {
+  padding: 6px 30px;
+}
+
+/* line 16, /home/ubuntu/workspace/agelog/app/assets/stylesheets/areas.scss */
+.nav-tabs > li > a {
+  background: #ffd39f;
+}
 /* gray */
 /* green */
 /* orange */
@@ -6742,43 +6756,52 @@ button.close {
   background: #ffd39f;
 }
 
-/* line 41, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 33, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+.btn-aged, .btn-wanted {
+  background: #79bd8f;
+}
+/* line 36, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+.btn-aged:hover, .btn-aged:focus, .btn-wanted:hover, .btn-wanted:focus {
+  background: #f9ae2c;
+}
+
+/* line 50, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #twitter-signupForm {
   background: #5ea9dd;
 }
-/* line 43, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 52, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #twitter-signupForm a {
   color: #ffffff;
 }
-/* line 45, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 54, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #twitter-signupForm a:hover, #twitter-signupForm a:focus {
   color: #ffffff;
   underline: none;
 }
-/* line 51, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 60, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #twitter-signupForm:hover, #twitter-signupForm:focus {
   opacity: 0.8;
 }
 
-/* line 58, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 67, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #facebook-signupForm {
   background: #3765a3;
 }
-/* line 60, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 69, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #facebook-signupForm a {
   color: #ffffff;
 }
-/* line 62, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 71, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #facebook-signupForm a:hover {
   color: #ffffff;
   underline: none;
 }
-/* line 68, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 77, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 #facebook-signupForm:hover, #facebook-signupForm:focus {
   opacity: 0.8;
 }
 
-/* line 74, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
+/* line 83, /home/ubuntu/workspace/agelog/app/assets/stylesheets/btn.scss */
 .omniauthLoginBtn .btn-default {
   margin: 10px 0 15px 0;
   width: 100%;
@@ -9155,6 +9178,12 @@ pre code {
   /* line 10, /home/ubuntu/workspace/agelog/vender/bundle/ruby/2.3.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_grid.scss */
   .container {
     width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 10, /home/ubuntu/workspace/agelog/vender/bundle/ruby/2.3.0/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_grid.scss */
+  .container {
+    width: 1170px;
   }
 }
 
@@ -15533,40 +15562,47 @@ button.close {
 /* gray */
 /* green */
 /* orange */
+/* override bootstrap */
+@media (min-width: 1200px) {
+  /* line 7, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+  .container {
+    width: 970px;
+  }
+}
 /* universal */
-/* line 7, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 14, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 body {
   background-color: #fffbe9 !important;
   font-weight: bold;
 }
 
-/* line 12, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 19, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 section {
   overflow: auto;
 }
 
-/* line 16, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 23, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 20, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 27, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .center {
   text-align: center;
 }
 
-/* line 24, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 31, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .center h1 {
   margin-bottom: 10px;
 }
 
 /* typography */
-/* line 30, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 37, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
 
-/* line 34, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 41, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
@@ -15575,7 +15611,7 @@ h1 {
   font-weight: bolder;
 }
 
-/* line 42, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 49, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
@@ -15584,7 +15620,7 @@ h2 {
   color: #777;
 }
 
-/* line 50, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 57, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 p {
   font-size: 1.1em;
   line-height: 1.7em;
@@ -15592,7 +15628,7 @@ p {
 }
 
 /* typography design */
-/* line 58, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 65, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .findHead {
   display: block;
   padding: 15px 10px;
@@ -15601,137 +15637,137 @@ p {
 }
 
 /* header */
-/* line 66, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 73, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .logo {
   margin: 9px 0 0 0;
   font-size: 1.5em;
   text-align: left;
 }
-/* line 71, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 78, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .logo a {
   color: #f9ae2c;
 }
-/* line 74, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 81, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .logo a:hover {
   background: transparent;
   color: #lightOrange;
   text-decoration: none;
 }
-/* line 80, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 87, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .logo a:visited {
   color: #f9ae2c;
 }
 
-/* line 87, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 94, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gNav .navbar-default {
   background: #e8ffc5;
 }
-/* line 92, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 99, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gNav .iconSmall a {
   padding: 10px 15px;
 }
-/* line 95, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 102, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gNav .iconSmall img {
   width: 30px;
   height: 30px;
 }
-/* line 101, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 108, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gNav .alert {
   margin: 0;
 }
-/* line 105, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 112, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gNav .form-inline .textField {
   width: 140px;
 }
 
-/* line 111, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 118, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .headerForm {
   margin: 12px 0 0 0;
   text-align: right;
 }
-/* line 114, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 121, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .headerForm input {
   margin: 0;
   padding: 2px 12px;
 }
 
-/* line 120, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 127, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .navbar-default .navbar-nav > li > a.signupBtn {
   background: #FF8900;
   color: #fff;
 }
 
-/* line 125, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 132, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .navbar-default .navbar-nav > li > a.signupBtn:hover, .navbar-default .navbar-nav > li > a.signupBtn:focus {
   background: #ffd39f;
 }
 
 /* mixins, variables, etc. */
 /* forms */
-/* line 142, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 149, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   margin-bottom: 15px;
   box-sizing: border-box;
 }
 
-/* line 148, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 155, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 input {
   height: auto !important;
 }
 
-/* line 152, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 159, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 #error_explanation {
   color: red;
 }
-/* line 154, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 161, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 #error_explanation ul {
   color: red;
   margin: 0 0 30px 0;
 }
 
-/* line 162, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 169, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .field_with_errors .form-control {
   color: #a94442;
 }
 
 /* links */
-/* line 168, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 175, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .letsFind {
   padding-top: 40px;
 }
 
-/* line 173, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 180, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .categoryLinks h2, .areaLinks h2 {
   margin-top: 0;
 }
-/* line 176, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 183, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .categoryLinks ul, .areaLinks ul {
   text-align: center;
 }
 
 /* sidebar */
-/* line 184, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 191, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section.user_info {
   margin-top: 20px;
 }
-/* line 187, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 194, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section {
   padding: 10px 0;
   margin-top: 20px;
 }
-/* line 190, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 197, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section:first-child {
   border: 0;
   padding-top: 0;
 }
-/* line 194, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 201, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section span {
   display: block;
   margin-bottom: 3px;
   line-height: 1;
 }
-/* line 199, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 206, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section h1 {
   font-size: 1.4em;
   text-align: left;
@@ -15739,113 +15775,125 @@ aside section h1 {
   margin-bottom: 3px;
   margin-top: 0px;
 }
-/* line 206, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 213, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside section li {
   list-style: none;
 }
 
-/* line 212, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 219, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gravatar {
   float: left;
   margin-right: 10px;
 }
 
-/* line 217, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 224, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .gravatar_edit {
   margin-top: 15px;
 }
 
 /* microposts */
-/* line 223, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 230, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts {
   list-style: none;
   padding: 0;
 }
-/* line 226, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 233, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts li {
   padding: 10px 0;
   border-top: 1px solid #e8e8e8;
 }
-/* line 230, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 237, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .user {
   margin-top: 5em;
   padding-top: 0;
 }
-/* line 234, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 241, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .content {
   display: block;
   margin-left: 60px;
 }
-/* line 237, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 244, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .content img {
   display: block;
   padding: 5px 0;
 }
-/* line 242, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 249, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .micropostImage {
   display: block;
 }
-/* line 245, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 252, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .micropostImage img {
   max-width: 100%;
 }
-/* line 248, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 255, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .timestamp {
   color: #777777;
   display: block;
   margin-left: 60px;
 }
-/* line 253, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 260, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .microposts .gravatar {
   float: left;
   margin-right: 10px;
   margin-top: 5px;
 }
 
-/* line 261, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 268, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 aside textarea {
   height: 100px;
   margin-bottom: 5px;
 }
 
-/* line 267, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 274, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 span.picture {
   margin-top: 10px;
 }
-/* line 269, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 276, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 span.picture input {
   border: 0;
 }
 
 /* footer */
-/* line 276, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 283, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 footer .navbar {
   margin: 40px 0 0 0;
 }
-/* line 278, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 285, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 footer .navbar ul {
   margin-top: 20px;
   text-align: center;
 }
-/* line 284, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 291, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 footer .navbar-default {
   background: #dd9f72;
 }
 
 /* breadcrumbs */
-/* line 290, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 297, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 .breadcrumbs {
   margin-bottom: 20px;
 }
 
-/* line 293, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+/* line 300, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
 span.current {
   font-weight: bold;
   font-size: 0.95em;
 }
+
+/* line 307, /home/ubuntu/workspace/agelog/app/assets/stylesheets/custom.css.scss */
+.categoriesLink {
+  background: #fff;
+  padding: 0 0 40px 0;
+  border-radius: 15px;
+}
 /* line 1, /home/ubuntu/workspace/agelog/app/assets/stylesheets/map.scss */
 #areaMap, #mapForm {
   height: 500px;
+}
+
+/* line 5, /home/ubuntu/workspace/agelog/app/assets/stylesheets/map.scss */
+#shopMap {
+  height: 300px;
 }
 /* gray */
 /* green */
@@ -15915,13 +15963,13 @@ span.current {
 /* line 63, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .profile-navbar .followEditBtn {
   position: absolute;
-  top: 8px;
+  top: 2px;
   right: 0;
 }
 /* line 67, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .profile-navbar .followEditBtn button {
   margin: 0;
-  padding: 6px 20px;
+  padding: 0;
   color: #00a388;
 }
 /* line 72, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
@@ -15940,53 +15988,59 @@ span.current {
 }
 /* line 83, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .profile-navbar .followEditBtn a.editBtn {
+  display: inline-block;
+  padding: 10px 10px 10px 0;
   background: none;
   text-decoration: none;
 }
-/* line 89, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 90, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+.profile-navbar .followEditBtn .glyphicon {
+  padding-left: 10px;
+}
+/* line 95, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .profile-navbar .nav-tabs > li > a {
   padding: 15px 10px;
 }
-/* line 91, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 97, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .profile-navbar .nav-tabs > li > a:hover {
   background: #ffd39f;
 }
 
-/* line 98, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 104, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow {
   float: left;
   margin: 0 2% 20px 0;
   width: 31%;
 }
-/* line 102, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 108, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile {
   position: relative;
   height: 360px;
 }
-/* line 106, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 112, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileCover {
   height: 150px;
 }
-/* line 110, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 116, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileHeader .iconImage {
   top: 110px;
   width: 100px;
   height: 100px;
 }
-/* line 114, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 120, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileHeader .iconImage:hover, .wrapFollow .wrapProfile .profileHeader .iconImage:focus {
   opacity: 0.9;
 }
-/* line 118, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 124, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileHeader .iconImage img {
   width: 100px;
   height: 100px;
 }
-/* line 122, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 128, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileHeader h2 {
   padding: 0 5px 0px 115px;
 }
-/* line 125, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
+/* line 131, /home/ubuntu/workspace/agelog/app/assets/stylesheets/mypages.scss */
 .wrapFollow .wrapProfile .profileHeader .infoArea {
   top: 205px;
 }
@@ -16024,7 +16078,7 @@ a:visited {
 /* line 28, /home/ubuntu/workspace/agelog/app/assets/stylesheets/scaffolds.scss */
 a:hover {
   color: #fff;
-  background-color: #000;
+  opacity: 0.8;
 }
 
 /* line 35, /home/ubuntu/workspace/agelog/app/assets/stylesheets/scaffolds.scss */
@@ -16245,76 +16299,188 @@ div.field, div.actions {
 .shop-single-side .side-box .side-box-body .gravatar img {
   margin: 2px;
 }
+
+/* line 168, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo {
+  padding: 0 20px;
+  min-height: 332px;
+  background: #fff;
+  box-sizing: border-box;
+  border: 1px solid #e7e7e7;
+}
+/* line 175, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid #e7e7e7;
+}
+/* line 184, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo .shopMainImage {
+  float: left;
+  position: relative;
+  margin-right: 20px;
+  width: 200px;
+  min-height: 150px;
+  background: #333;
+  overflow: hidden;
+}
+/* line 193, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo .shopMainImage img {
+  position: absolute;
+  bottom: 0;
+  margin-top: -50px;
+  width: 100%;
+}
+/* line 201, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo .shopDetail {
+  float: left;
+}
+/* line 204, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo .shopDetail dt {
+  clear: both;
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+/* line 212, /home/ubuntu/workspace/agelog/app/assets/stylesheets/shops.scss */
+.shopInfo .shopDetail dd {
+  float: left;
+}
 /* gray */
 /* green */
 /* orange */
 /* top */
-/* line 7, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 8, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop {
   overflow: hidden;
 }
-/* line 11, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 13, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop h2 {
   margin: 0;
   padding: 5px 0;
   font-weight: bold;
   color: #ffffff;
 }
-/* line 18, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 20, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea {
   float: left;
   width: 595px;
   height: 350px;
 }
-/* line 22, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 24, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea h2 {
   background: #79bd8f;
 }
-/* line 26, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 28, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea .openPhoto {
   float: left;
+  position: relative;
   margin: 0 6px 0 0;
   width: 360px;
   height: 270px;
   background: #ffffff;
+  overflow: hidden;
 }
-/* line 34, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 37, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .openPhoto img {
+  position: absolute;
+  bottom: 0;
+  margtin-top: -50px;
+  width: 100%;
+}
+/* line 45, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea .rank {
   float: left;
+  position: relative;
   margin-bottom: 5px;
   width: 110px;
   height: 50px;
   background: #fff;
   cursor: pointer;
+  overflow: hidden;
 }
-/* line 43, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 55, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .rank a {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+/* line 61, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .rank img {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: -50px;
+}
+/* line 69, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea .rank:nth-child(2n-1) {
   margin-right: 5px;
 }
-/* line 46, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 72, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea .selectablePhotoCategories {
   clear: both;
   margin: 5px 0 0;
   height: 50px;
   background: #fff;
 }
-/* line 52, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 78, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapPhotoArea .selectablePhotoCategories .selectableRank {
   float: left;
   width: 50%;
   height: 100%;
   cursor: pointer;
 }
-/* line 61, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 84, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .selectablePhotoCategories .selectableRank ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: inherit;
+}
+/* line 90, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .selectablePhotoCategories .selectableRank ol li {
+  float: left;
+  position: relative;
+  width: 33%;
+  height: inherit;
+  overflow: hidden;
+}
+/* line 97, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .selectablePhotoCategories .selectableRank ol li span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  color: #ef9d44;
+  background: #ffffff;
+  opacity: 0.9;
+}
+/* line 107, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.wrapHomeTop .wrapPhotoArea .selectablePhotoCategories .selectableRank ol li img {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  width: 100%;
+}
+/* line 120, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapAreaMap {
   float: right;
   text-align: center;
   background: #79bd8f;
 }
-/* line 69, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+/* line 128, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
 .wrapHomeTop .wrapAreaMap #topAreaMap {
   border: 10px solid #79bd8f;
   border-top: none;
+}
+
+/* line 137, /home/ubuntu/workspace/agelog/app/assets/stylesheets/static_pages.scss */
+.categoriesLink .list-inline {
+  padding-left: 10px;
 }
 /* gray */
 /* green */
